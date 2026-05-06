@@ -7,7 +7,7 @@ export default function Home() {
         <header className="home-header">
           <div className="home-location">São Paulo</div>
 
-          <div className="home-logo">AMATO LIMA</div>
+          <img className="home-logo" src="/logo.png" alt="Amato Lima" />
 
           <button className="home-menu" aria-label="Abrir menu">
             <span />
@@ -16,16 +16,16 @@ export default function Home() {
         </header>
 
         <div className="hero-composition">
-          <div className="hero-line hero-line-top">
-            <span>A</span>
-            <span>Arte</span>
-          </div>
+          <h1 className="hero-title hero-title-top">A Arte</h1>
 
-          <div className="hero-line hero-line-bottom">
-            <span>De</span>
-            <span className="hero-video-target" />
-            <span>Habitar</span>
-          </div>
+          <div className="hero-video-target" />
+
+          <h2 className="hero-title hero-title-bottom">De Habitar</h2>
+        </div>
+
+        <div className="home-bottom">
+          <div className="home-line" />
+          <div className="home-arrow" />
         </div>
       </section>
 
