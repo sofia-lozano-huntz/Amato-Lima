@@ -91,14 +91,13 @@ video {
   padding-top: 40px;
   transform: translateY(12px);
 }
-
 .hero-line {
   font-family: "Marcellus", Georgia, serif;
   font-weight: 400;
   text-transform: none;
-  letter-spacing: 0.045em;
-  line-height: 0.92;
-  font-size: clamp(2.65rem, 10.5vw, 5.6rem);
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  font-size: clamp(2rem, 8vw, 3.4rem);
   color: #151515;
 }
 
@@ -106,52 +105,48 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(18px, 3vw, 40px);
-  transform: translateX(12vw);
+  gap: 18px;
+  transform: translateX(9vw);
 }
 
 .hero-line-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 1.4vw, 20px);
-  transform: translateX(4vw);
+  gap: 6px;
+  transform: translateX(10vw);
 }
 
 .hero-video-target {
   display: block;
-  width: min(29vw, 340px);
+  width: 29vw;
   aspect-ratio: 16 / 9;
 }
-
 @media (max-width: 768px) {
   .hero-composition {
-    gap: 4px;
-    padding-top: 46px;
-    transform: translateY(8px);
+    gap: 2px;
+    padding-top: 40px;
+    transform: translateY(4px);
   }
 
   .hero-line {
-    font-size: clamp(2.75rem, 12.6vw, 4.5rem);
-    letter-spacing: 0.04em;
+    font-size: clamp(2.1rem, 10vw, 3.4rem);
+    letter-spacing: 0.018em;
   }
 
   .hero-line-top {
-    gap: 22px;
-    transform: translateX(12vw);
+    gap: 14px;
+    transform: translateX(8vw);
   }
 
   .hero-line-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(8px, 1.4vw, 20px);
-  transform: translateX(15.5vw);
+    gap: 4px;
+    transform: translateX(9vw);
   }
 
   .hero-video-target {
-    width: 34vw;
-    min-width: 126px;
+    width: 31vw;
+    min-width: 118px;
   }
 }
 
