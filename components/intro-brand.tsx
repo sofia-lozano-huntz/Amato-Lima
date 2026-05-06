@@ -46,7 +46,10 @@ export default function IntroBrand() {
           left: rect.left,
           xPercent: 0,
           yPercent: 0,
-          duration: 2.2,
+          duration: 2.15,
+          onComplete: () => {
+            videoBoxRef.current?.classList.add("is-framed");
+          },
         },
         0.15
       );
@@ -63,7 +66,7 @@ export default function IntroBrand() {
       try {
         await video.play();
       } catch {
-        // Mobile fazendo charme, porque aparentemente até vídeo tem personalidade.
+        // O celular às vezes decide virar diretor criativo. Péssimo.
       }
     };
 
@@ -109,6 +112,7 @@ export default function IntroBrand() {
           src="/videos/amato-intro.mp4"
           autoPlay
           muted
+          loop
           playsInline
           preload="auto"
           className={ready ? "is-ready" : ""}
