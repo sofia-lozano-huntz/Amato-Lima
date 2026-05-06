@@ -22,12 +22,6 @@ export default function IntroBrand() {
 
     setCollapsed(true);
 
-    const video = videoRef.current;
-
-    if (video) {
-      video.pause();
-    }
-
     gsap
       .timeline({
         defaults: {
