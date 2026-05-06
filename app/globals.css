@@ -14,8 +14,8 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
+body {
+  background: #f4f0e8;
 }
 
 video {
@@ -23,65 +23,13 @@ video {
   pointer-events: none;
 }
 
-/* INTRO */
-
-.intro {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: #000;
-  overflow: hidden;
-}
-
-.intro-video-box {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 20;
-  overflow: hidden;
-  background: #000;
-}
-
-.intro-video-box video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.scroll-indicator {
-  position: absolute;
-  left: 50%;
-  bottom: 38px;
-  transform: translateX(-50%);
-  z-index: 30;
-  text-align: center;
-  color: rgba(245, 243, 239, 0.78);
-}
-
-.scroll-indicator p {
-  font-size: 10px;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-}
-
-.scroll-indicator span {
-  display: block;
-  width: 1px;
-  height: 38px;
-  margin: 12px auto 0;
-  background: rgba(245, 243, 239, 0.42);
-}
-
 /* HOME */
 
 .home-hero {
   position: relative;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100svh;
   background: #f4f0e8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
@@ -102,12 +50,12 @@ video {
 
 .home-location {
   justify-self: start;
-  opacity: 0.65;
+  opacity: 0.68;
 }
 
 .home-logo {
   justify-self: center;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.44em;
   font-size: 12px;
 }
 
@@ -117,6 +65,9 @@ video {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  border: 0;
+  background: transparent;
+  padding: 0;
 }
 
 .home-menu span {
@@ -126,40 +77,106 @@ video {
   background: #151515;
 }
 
-.hero-title {
-  display: grid;
-  grid-template-columns: 1fr;
+.hero-composition {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  gap: 26px;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 24px);
+  padding-top: 40px;
+}
+
+.hero-line {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  line-height: 0.9;
-  font-size: clamp(4.2rem, 14vw, 9rem);
+  line-height: 0.82;
+  font-size: clamp(4.4rem, 14vw, 9rem);
   text-align: center;
-  margin-top: 120px;
 }
 
-.hero-video-space {
-  width: min(68vw, 620px);
-  aspect-ratio: 16 / 9;
+.hero-line-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2.4vw, 32px);
+}
+
+.hero-video-target {
   display: block;
+  width: min(52vw, 520px);
+  aspect-ratio: 16 / 9;
 }
 
-@media (min-width: 900px) {
-  .hero-title {
-    grid-template-columns: auto auto auto;
-    gap: 2vw;
-    font-size: clamp(3rem, 7vw, 8rem);
-    margin-top: 0;
-  }
+/* INTRO OVERLAY */
 
-  .hero-video-space {
-    width: 28vw;
-    min-width: 260px;
-  }
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: auto;
 }
+
+.intro.is-collapsed {
+  pointer-events: none;
+}
+
+.intro-video-box {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100svh;
+  z-index: 52;
+  overflow: hidden;
+  background: #f4f0e8;
+  will-change: width, height, top, left, transform;
+}
+
+.intro-video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.intro-video-box video.is-ready {
+  opacity: 1;
+}
+
+.scroll-indicator {
+  position: fixed;
+  left: 50%;
+  bottom: 38px;
+  transform: translateX(-50%);
+  z-index: 55;
+  text-align: center;
+  color: rgba(245, 243, 239, 0.82);
+  transition: opacity 0.5s ease;
+}
+
+.scroll-indicator p {
+  font-size: 10px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 1px;
+  height: 38px;
+  margin: 12px auto 0;
+  background: rgba(245, 243, 239, 0.42);
+}
+
+.intro.is-collapsed .scroll-indicator {
+  opacity: 0;
+}
+
+/* MOBILE */
 
 @media (max-width: 768px) {
   .home-header {
@@ -177,7 +194,21 @@ video {
     width: 26px;
   }
 
-  .hero-title {
-    margin-top: 150px;
+  .hero-composition {
+    gap: 18px;
+    padding-top: 20px;
+  }
+
+  .hero-line {
+    font-size: clamp(4.4rem, 18vw, 7rem);
+  }
+
+  .hero-line-bottom {
+    gap: 14px;
+  }
+
+  .hero-video-target {
+    width: 44vw;
+    min-width: 150px;
   }
 }
