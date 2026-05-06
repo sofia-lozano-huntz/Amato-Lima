@@ -46,7 +46,7 @@ export default function IntroBrand() {
           left: rect.left,
           xPercent: 0,
           yPercent: 0,
-          duration: 2.15,
+          duration: 2.25,
           onComplete: () => {
             videoBoxRef.current?.classList.add("is-framed");
           },
@@ -66,7 +66,7 @@ export default function IntroBrand() {
       try {
         await video.play();
       } catch {
-        // O celular às vezes decide virar diretor criativo. Péssimo.
+        // Mobile, essa criatura delicada e insuportável.
       }
     };
 
@@ -96,7 +96,7 @@ export default function IntroBrand() {
 
     const timer = setTimeout(() => {
       collapseIntro();
-    }, 450);
+    }, 420);
 
     return () => clearTimeout(timer);
   }, [finished]);
