@@ -1,8 +1,8 @@
 @font-face {
   font-family: "TT Wellingtons";
-  src: url("/fonts/TT-Wellingtons-Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
+  src: url("/fonts/TT-Wellingtons-ExtraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -16,9 +16,9 @@ html,
 body {
   width: 100%;
   min-height: 100%;
-  background: #eee8dc;
-  color: #4f453b;
   overflow-x: hidden;
+  background: #080706;
+  color: #efe8dc;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -34,34 +34,39 @@ video {
   width: 100%;
   min-height: 100svh;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 72% 18%, rgba(186, 162, 130, 0.16), transparent 34%),
-    radial-gradient(circle at 18% 78%, rgba(92, 72, 58, 0.08), transparent 36%),
-    linear-gradient(135deg, #f2eee6 0%, #ebe3d7 46%, #f5f1e9 100%);
+  background: #080706;
 }
 
-.material-light {
+.stone-layer {
   position: absolute;
-  inset: -20%;
+  inset: 0;
   z-index: 0;
-  pointer-events: none;
-  opacity: 0.42;
-  background:
-    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.28) 38%, transparent 58%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.22), transparent 42%);
-  filter: blur(28px);
-  animation: materialBreath 18s ease-in-out infinite alternate;
+  background-image: url("/stone.jpg");
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1.015);
+  animation: stoneBreath 22s ease-in-out infinite alternate;
 }
 
-@keyframes materialBreath {
+.stone-shadow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 232, 194, 0.08), transparent 26%),
+    radial-gradient(circle at 50% 82%, rgba(214, 180, 124, 0.1), transparent 28%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.62), transparent 32%, rgba(0, 0, 0, 0.3)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.46), transparent 36%, rgba(0, 0, 0, 0.36));
+}
+
+@keyframes stoneBreath {
   from {
-    transform: translate(-1.4%, -0.8%) scale(1);
-    opacity: 0.32;
+    transform: scale(1.015) translate(0, 0);
   }
 
   to {
-    transform: translate(1.2%, 0.8%) scale(1.035);
-    opacity: 0.48;
+    transform: scale(1.035) translate(-0.6%, -0.4%);
   }
 }
 
@@ -69,7 +74,7 @@ video {
 
 .home-header {
   position: absolute;
-  top: 16px;
+  top: 14px;
   left: 0;
   z-index: 5;
 
@@ -78,32 +83,30 @@ video {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
 
-  padding: 0 54px;
-
-  color: rgba(79, 69, 59, 0.46);
+  padding: 0 58px;
 }
 
 .home-location {
   justify-self: start;
-  transform: translateX(10px);
+  transform: translateX(8px);
 
   font-size: 8px;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.46em;
   text-transform: uppercase;
   font-weight: 300;
 
   background: linear-gradient(
     105deg,
-    rgba(79, 69, 59, 0.25) 0%,
-    rgba(150, 126, 96, 0.78) 48%,
-    rgba(79, 69, 59, 0.25) 100%
+    rgba(239, 232, 220, 0.32) 0%,
+    rgba(226, 197, 154, 0.9) 48%,
+    rgba(239, 232, 220, 0.32) 100%
   );
-  background-size: 240% 100%;
+  background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  animation: letterLight 9s ease-in-out infinite alternate;
+  animation: letterLight 10s ease-in-out infinite alternate;
 }
 
 @keyframes letterLight {
@@ -114,23 +117,22 @@ video {
 
   to {
     background-position: 100% 50%;
-    opacity: 0.72;
+    opacity: 0.78;
   }
 }
 
 .home-logo {
   justify-self: center;
-  width: 142px;
+  width: 168px;
   height: auto;
   display: block;
-  opacity: 0.84;
+  opacity: 0.88;
 }
 
 .home-menu {
   justify-self: end;
-  width: 34px;
-  height: 14px;
-
+  width: 36px;
+  height: 15px;
   position: relative;
   border: 0;
   background: transparent;
@@ -141,74 +143,70 @@ video {
   position: absolute;
   right: 0;
   height: 1px;
-  background: rgba(42, 36, 31, 0.72);
+  background: rgba(239, 232, 220, 0.78);
 }
 
 .home-menu span:first-child {
   top: 2px;
-  width: 34px;
+  width: 36px;
 }
 
 .home-menu span:last-child {
   bottom: 1px;
   width: 24px;
-  right: 5px;
+  right: 7px;
 }
 
 /* HERO */
 
 .hero-composition {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-
-  padding-top: 10vh;
 }
 
 .hero-title {
   font-family: "TT Wellingtons", "Times New Roman", serif;
-  font-weight: 300;
+  font-weight: 200;
+  font-style: italic;
   line-height: 0.9;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
+  color: rgba(239, 232, 220, 0.82);
   text-transform: none;
-  color: rgba(79, 69, 59, 0.72);
 }
 
 .hero-title-top {
   align-self: flex-start;
-  margin-left: 30vw;
-  margin-top: 28vh;
-
-  font-size: clamp(2.4rem, 5.4vw, 6.2rem);
+  margin-left: 61vw;
+  margin-top: 23vh;
+  font-size: clamp(2.1rem, 4.2vw, 5rem);
 }
 
 .hero-video-target {
   align-self: center;
 
-  width: min(27vw, 360px);
+  width: min(28vw, 360px);
   aspect-ratio: 16 / 9;
 
-  margin-top: 7.5vh;
-  margin-left: 8vw;
+  margin-top: 5.5vh;
+  margin-left: 5vw;
 
   overflow: hidden;
-  background: rgba(79, 69, 59, 0.06);
   border-radius: 1.5px;
+  background: rgba(239, 232, 220, 0.06);
 }
 
 .hero-title-bottom {
   align-self: flex-start;
-
-  margin-top: 8.5vh;
-  margin-left: 39vw;
-
-  font-size: clamp(2.5rem, 5.7vw, 6.4rem);
+  margin-left: 14vw;
+  margin-top: 9.5vh;
+  font-size: clamp(2.05rem, 4.05vw, 4.8rem);
 }
 
-/* LINHA / SETA */
+/* BOTTOM */
 
 .home-bottom {
   position: absolute;
@@ -225,15 +223,16 @@ video {
 .home-line {
   width: 100%;
   height: 0.5px;
-  background: rgba(79, 69, 59, 0.22);
+  background: rgba(239, 232, 220, 0.24);
+  filter: blur(0.15px);
 }
 
 .home-arrow {
-  width: 17px;
-  height: 17px;
-  margin-top: 22px;
-  border-right: 1px solid rgba(79, 69, 59, 0.38);
-  border-bottom: 1px solid rgba(79, 69, 59, 0.38);
+  width: 16px;
+  height: 16px;
+  margin-top: 21px;
+  border-right: 1px solid rgba(239, 232, 220, 0.42);
+  border-bottom: 1px solid rgba(239, 232, 220, 0.42);
   transform: rotate(45deg);
 }
 
@@ -259,7 +258,7 @@ video {
   height: 100svh;
   z-index: 52;
   overflow: hidden;
-  background: #eee8dc;
+  background: #080706;
   will-change: width, height, top, left, transform;
 }
 
@@ -320,19 +319,24 @@ video {
 /* MOBILE */
 
 @media (max-width: 768px) {
+  .stone-layer {
+    background-position: center center;
+    transform: scale(1.02);
+  }
+
   .home-header {
-    top: 14px;
-    padding: 0 30px;
+    top: 12px;
+    padding: 0 28px;
   }
 
   .home-location {
     font-size: 7px;
-    letter-spacing: 0.36em;
+    letter-spacing: 0.38em;
     transform: translateX(4px);
   }
 
   .home-logo {
-    width: 122px;
+    width: 132px;
   }
 
   .home-menu {
@@ -345,41 +349,35 @@ video {
 
   .home-menu span:last-child {
     width: 21px;
-    right: 4px;
-  }
-
-  .hero-composition {
-    padding-top: 0;
+    right: 5px;
   }
 
   .hero-title {
-    letter-spacing: 0.075em;
-    color: rgba(79, 69, 59, 0.68);
+    letter-spacing: 0.13em;
   }
 
   .hero-title-top {
-    margin-top: 36vh;
-    margin-left: 22vw;
-    font-size: clamp(2.1rem, 9.5vw, 3.6rem);
+    margin-top: 24vh;
+    margin-left: 54vw;
+    font-size: clamp(1.75rem, 8vw, 3.2rem);
   }
 
   .hero-video-target {
     width: 43vw;
     min-width: 148px;
-
     margin-top: 7vh;
-    margin-left: 12vw;
+    margin-left: 8vw;
   }
 
   .hero-title-bottom {
-    margin-top: 8vh;
-    margin-left: 31vw;
-    font-size: clamp(2.15rem, 9.8vw, 3.75rem);
+    margin-top: 10vh;
+    margin-left: 12vw;
+    font-size: clamp(1.7rem, 7.8vw, 3.1rem);
   }
 
   .home-bottom {
     left: 9%;
     right: 9%;
-    bottom: 32px;
+    bottom: 30px;
   }
 }
