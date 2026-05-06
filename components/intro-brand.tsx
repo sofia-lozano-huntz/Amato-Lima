@@ -13,7 +13,7 @@ export default function IntroBrand() {
   const [ready, setReady] = useState(false);
 
   const collapseIntro = () => {
-    if (collapsed || !videoBoxRef.current || !wrapperRef.current) return;
+    if (collapsed || !videoBoxRef.current) return;
 
     const target = document.querySelector(".hero-video-target");
     if (!target) return;
@@ -32,7 +32,7 @@ export default function IntroBrand() {
         ".scroll-indicator",
         {
           opacity: 0,
-          duration: 0.45,
+          duration: 0.5,
           ease: "power2.out",
         },
         0
@@ -44,14 +44,12 @@ export default function IntroBrand() {
           height: rect.height,
           top: rect.top,
           left: rect.left,
-          xPercent: 0,
-          yPercent: 0,
-          duration: 2.25,
+          duration: 2.35,
           onComplete: () => {
             videoBoxRef.current?.classList.add("is-framed");
           },
         },
-        0.15
+        0.12
       );
   };
 
@@ -61,16 +59,7 @@ export default function IntroBrand() {
 
     video.muted = true;
     video.playsInline = true;
-
-    const playVideo = async () => {
-      try {
-        await video.play();
-      } catch {
-        // Mobile, essa criatura delicada e insuportável.
-      }
-    };
-
-    playVideo();
+    video.play().catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -109,7 +98,7 @@ export default function IntroBrand() {
       <div ref={videoBoxRef} className="intro-video-box">
         <video
           ref={videoRef}
-          src="/videos/amato-intro.mp4"
+          src="/intro.mp4"
           autoPlay
           muted
           loop
