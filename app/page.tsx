@@ -16,12 +16,15 @@ export default function Home() {
         </header>
 
         <div className="hero-composition">
-          <div className="hero-line hero-line-top">A arte</div>
+          <div className="hero-line hero-line-top">
+            <span>A</span>
+            <span>Arte</span>
+          </div>
 
           <div className="hero-line hero-line-bottom">
-            <span>de</span>
+            <span>De</span>
             <span className="hero-video-target" />
-            <span>habitar</span>
+            <span>Habitar</span>
           </div>
         </div>
       </section>
