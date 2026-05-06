@@ -5,13 +5,13 @@ export default function Home() {
     <main>
       <IntroBrand />
 
-      <section className="home-hero">
+      <section id="home" className="home-hero">
         <header className="home-header">
           <div className="home-location">São Paulo</div>
 
           <div className="home-logo">AMATO LIMA</div>
 
-          <div className="home-menu">
+          <div className="home-menu" aria-label="Abrir menu">
             <span />
             <span />
           </div>
@@ -19,17 +19,7 @@ export default function Home() {
 
         <h1 className="hero-title">
           <span>A arte de</span>
-
-          <span className="hero-video">
-            <video
-              src="/videos/amato-intro.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-          </span>
-
+          <span className="hero-video-space" />
           <span>habitar</span>
         </h1>
       </section>
