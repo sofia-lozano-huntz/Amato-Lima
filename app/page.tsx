@@ -4,7 +4,8 @@ export default function Home() {
   return (
     <main>
       <section id="home" className="home-hero">
-        <div className="material-light" />
+        <div className="stone-layer" />
+        <div className="stone-shadow" />
 
         <header className="home-header">
           <div className="home-location">São Paulo</div>
