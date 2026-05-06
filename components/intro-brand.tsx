@@ -15,18 +15,21 @@ export default function IntroBrand() {
 
     setCollapsed(true);
 
-    gsap.timeline({
-      defaults: {
-        ease: "power3.inOut",
-        duration: 1.8,
-      },
-    })
+    const home = document.getElementById("home");
+
+    gsap
+      .timeline({
+        defaults: {
+          ease: "power3.inOut",
+          duration: 1.8,
+        },
+      })
       .to(videoBoxRef.current, {
-        width: "28vw",
-        height: "16vw",
-        minWidth: "260px",
-        minHeight: "145px",
-        top: "50%",
+        width: "68vw",
+        height: "38.25vw",
+        maxWidth: "620px",
+        maxHeight: "348px",
+        top: "42%",
         left: "50%",
         xPercent: -50,
         yPercent: -50,
@@ -34,22 +37,39 @@ export default function IntroBrand() {
       .to(
         wrapperRef.current,
         {
-          backgroundColor: "#f1dfb8",
+          backgroundColor: "#f4f0e8",
           duration: 1.2,
         },
-        "-=1.2"
+        "-=1.3"
+      )
+      .call(
+        () => {
+          window.scrollTo({
+            top: home ? home.offsetTop : window.innerHeight,
+            behavior: "smooth",
+          });
+        },
+        [],
+        "-=1.1"
       );
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!collapsed && window.scrollY > 20) {
-        collapseIntro();
-      }
+    const handleWheel = () => {
+      if (!collapsed) collapseIntro();
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleTouchMove = () => {
+      if (!collapsed) collapseIntro();
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
   }, [collapsed]);
 
   useEffect(() => {
@@ -57,7 +77,7 @@ export default function IntroBrand() {
 
     const timer = setTimeout(() => {
       collapseIntro();
-    }, 1200);
+    }, 900);
 
     return () => clearTimeout(timer);
   }, [finished]);
@@ -77,7 +97,7 @@ export default function IntroBrand() {
 
       {!collapsed && (
         <div className="scroll-indicator">
-          <p>Explore</p>
+          <p>Entrar</p>
           <span />
         </div>
       )}
