@@ -97,7 +97,7 @@ video {
   text-transform: none;
   letter-spacing: 0.02em;
   line-height: 0.9;
-  font-size: clamp(2rem, 8vw, 3.4rem);
+  font-size: clamp(1.4rem, 4vw, 1.5rem);
   color: #151515;
 }
 
@@ -106,7 +106,7 @@ video {
   align-items: center;
   justify-content: center;
   gap: 18px;
-  transform: translateX(9vw);
+  transform: translateX(20vw);
 }
 
 .hero-line-bottom {
