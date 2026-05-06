@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -77,39 +79,51 @@ video {
   background: #151515;
 }
 
+/* HERO COMPOSITION */
+
 .hero-composition {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(12px, 2vw, 24px);
-  padding-top: 40px;
+  gap: clamp(6px, 1vw, 14px);
+  padding-top: 44px;
 }
 
 .hero-line {
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  line-height: 0.82;
-  font-size: clamp(4.4rem, 14vw, 9rem);
-  text-align: center;
+  text-transform: none;
+  letter-spacing: 0.035em;
+  line-height: 0.88;
+  font-size: clamp(3.1rem, 8.5vw, 7.2rem);
+  color: #151515;
+}
+
+.hero-line-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 44px);
+  transform: translateX(-4vw);
 }
 
 .hero-line-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(12px, 2.4vw, 32px);
+  gap: clamp(10px, 1.6vw, 24px);
+  transform: translateX(3vw);
 }
 
 .hero-video-target {
   display: block;
-  width: min(52vw, 520px);
+  width: min(30vw, 360px);
   aspect-ratio: 16 / 9;
 }
 
-/* INTRO OVERLAY */
+/* INTRO */
 
 .intro {
   position: fixed;
@@ -195,20 +209,26 @@ video {
   }
 
   .hero-composition {
-    gap: 18px;
-    padding-top: 20px;
+    gap: 8px;
+    padding-top: 52px;
   }
 
   .hero-line {
-    font-size: clamp(4.4rem, 18vw, 7rem);
+    font-size: clamp(3.2rem, 14vw, 5.2rem);
+  }
+
+  .hero-line-top {
+    gap: 26px;
+    transform: translateX(-6vw);
   }
 
   .hero-line-bottom {
-    gap: 14px;
+    gap: 10px;
+    transform: translateX(4vw);
   }
 
   .hero-video-target {
-    width: 44vw;
-    min-width: 150px;
+    width: 35vw;
+    min-width: 130px;
   }
 }
