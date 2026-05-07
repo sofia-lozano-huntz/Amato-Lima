@@ -236,14 +236,12 @@ video {
 }
 
 .hero-film video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
   filter:
-    brightness(0.84)
+    brightness(0.82)
     contrast(0.92)
-    saturate(0.82);
+    saturate(0.78)
+    sepia(0.08)
+    hue-rotate(-4deg);
 }
 
 /* =========================================================
