@@ -29,12 +29,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  overflow-y: auto;
+}
+
 video {
   display: block;
   pointer-events: none;
 }
 
-/* HERO */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
   position: relative;
@@ -44,20 +50,26 @@ video {
   background: #eae3d6;
 }
 
+/* =========================================================
+   FUNDO WOOD
+   IMPORTANTE: arquivo correto é wood.jpg
+========================================================= */
+
 .hero-wood {
   position: absolute;
   inset: 0;
   z-index: 0;
 
-  background-image: url("/wood.png");
+  background-image: url("/wood.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 
-  filter: brightness(1.02) contrast(0.96) saturate(0.96);
-  transform: scale(1.01);
+  transform: none;
+  filter: none;
 }
 
+/* camada quase invisível, só para unir tudo */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -67,13 +79,15 @@ video {
   background:
     linear-gradient(
       to bottom,
-      rgba(234, 227, 214, 0.08),
-      rgba(234, 227, 214, 0.02) 38%,
-      rgba(234, 227, 214, 0.05) 100%
+      rgba(234, 227, 214, 0.02),
+      rgba(234, 227, 214, 0.00) 45%,
+      rgba(234, 227, 214, 0.02) 100%
     );
 }
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .hero-nav {
   position: absolute;
@@ -95,6 +109,7 @@ video {
   font-size: 11px;
   letter-spacing: 0.36em;
   text-transform: uppercase;
+
   color: rgba(79, 64, 50, 0.64);
 }
 
@@ -111,9 +126,9 @@ video {
 .hero-menu {
   justify-self: end;
 
+  position: relative;
   width: 44px;
   height: 22px;
-  position: relative;
 
   border: 0;
   background: transparent;
@@ -123,6 +138,7 @@ video {
 .hero-menu span {
   position: absolute;
   right: 0;
+
   height: 1px;
   background: rgba(79, 64, 50, 0.72);
 }
@@ -137,7 +153,9 @@ video {
   width: 32px;
 }
 
-/* COPY */
+/* =========================================================
+   COPY
+========================================================= */
 
 .hero-copy {
   position: absolute;
@@ -152,7 +170,7 @@ video {
 .hero-copy-script {
   display: block;
 
-  font-family: "Switzerland", "Cormorant Garamond", serif;
+  font-family: "Switzerland", serif;
   font-weight: 400;
 
   font-size: clamp(6rem, 14.8vw, 12.2rem);
@@ -168,7 +186,7 @@ video {
 
   margin-top: -0.18rem;
 
-  font-family: "Agatho Light Caps", "Times New Roman", serif;
+  font-family: "Agatho Light Caps", serif;
   font-weight: 300;
 
   font-size: clamp(2.9rem, 6.7vw, 6.2rem);
@@ -178,7 +196,9 @@ video {
   text-transform: uppercase;
 }
 
-/* FRAME */
+/* =========================================================
+   FRAME FINO ATRÁS DO VÍDEO
+========================================================= */
 
 .hero-frame-line {
   position: absolute;
@@ -196,7 +216,9 @@ video {
   pointer-events: none;
 }
 
-/* VIDEO */
+/* =========================================================
+   VÍDEO
+========================================================= */
 
 .hero-film {
   position: absolute;
@@ -216,8 +238,7 @@ video {
 
   background: rgba(79, 64, 50, 0.12);
 
-  box-shadow:
-    0 28px 70px rgba(79, 64, 50, 0.18);
+  box-shadow: 0 28px 70px rgba(79, 64, 50, 0.18);
 }
 
 .hero-film video {
@@ -228,7 +249,9 @@ video {
   filter: brightness(0.86) contrast(0.92) saturate(0.82);
 }
 
-/* SCROLL */
+/* =========================================================
+   SCROLL
+========================================================= */
 
 .hero-scroll {
   position: absolute;
@@ -269,13 +292,17 @@ video {
   transform: rotate(45deg);
 }
 
-/* INTRO */
+/* =========================================================
+   INTRO
+========================================================= */
 
 .intro {
   position: fixed;
   inset: 0;
   z-index: 50;
+
   overflow: hidden;
+
   pointer-events: auto;
 }
 
@@ -295,7 +322,7 @@ video {
   overflow: hidden;
   background: #eae3d6;
 
-  will-change: width, height, top, left, border-radius;
+  will-change: width, height, top, left, border-radius, opacity;
 }
 
 .intro-video-box video {
@@ -312,12 +339,7 @@ video {
   opacity: 1;
 }
 
-.intro-video-box.is-framed video {
-  filter: brightness(0.86) contrast(0.92) saturate(0.82);
-}
-
-/* ENTRAR */
-
+/* convite da intro */
 .scroll-indicator {
   position: fixed;
 
@@ -350,12 +372,28 @@ video {
   background: rgba(234, 227, 214, 0.48);
 }
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+   Mantém a composição da referência, sem apagar wood.jpg.
+========================================================= */
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
+
   .hero-wood {
+    background-image: url("/wood.jpg");
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    transform: none;
+    filter: none;
+  }
+
+  .hero-overlay {
+    background: rgba(234, 227, 214, 0.015);
   }
 
   .hero-nav {
@@ -366,6 +404,7 @@ video {
   .hero-location {
     font-size: 8px;
     letter-spacing: 0.34em;
+    color: rgba(79, 64, 50, 0.64);
   }
 
   .hero-logo {
@@ -374,6 +413,7 @@ video {
 
   .hero-menu {
     width: 38px;
+    height: 19px;
   }
 
   .hero-menu span:first-child {
@@ -386,45 +426,54 @@ video {
 
   .hero-copy {
     top: 23vh;
-    left: 5.8vw;
+    left: 5.2vw;
   }
 
   .hero-copy-script {
-    font-size: 6.8rem;
-    line-height: 0.48;
-    letter-spacing: -0.06em;
+    font-size: 7.6rem;
+    line-height: 0.42;
+    letter-spacing: -0.075em;
+
+    transform: translateX(-0.9vw);
   }
 
   .hero-copy-main {
-    font-size: 3.08rem;
-    line-height: 0.82;
-    margin-top: -0.08rem;
+    font-size: 3.45rem;
+    line-height: 0.78;
+
+    margin-top: -0.1rem;
+    letter-spacing: 0.01em;
   }
 
   .hero-frame-line {
-    left: 25vw;
-    top: 52vh;
+    left: 30vw;
+    top: 51.5vh;
 
-    width: 72vw;
-    height: 26vh;
+    width: 70vw;
+    height: 27vh;
 
     border-radius: 34px;
+    border-color: rgba(79, 64, 50, 0.22);
   }
 
   .hero-film {
-    left: 29vw;
-    top: 57.8vh;
+    left: 34vw;
+    top: 56.8vh;
 
-    width: 64vw;
+    width: 62vw;
 
-    border-radius: 21px;
+    border-radius: 20px;
+  }
+
+  .hero-film video {
+    filter: brightness(0.82) contrast(0.92) saturate(0.82);
   }
 
   .hero-scroll {
-    bottom: 26px;
+    bottom: 24px;
   }
 
   .hero-scroll-line {
-    height: 56px;
+    height: 58px;
   }
-}
+        }
