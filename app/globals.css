@@ -169,36 +169,23 @@ video {
 }
 
 .hero-copy-script {
-  display: block;
+  color: rgba(248, 241, 232, 0.88);
 
-  font-family: "Switzerland", serif;
-  font-weight: 400;
+  mix-blend-mode: soft-light;
 
-  font-size: clamp(7.4rem, 18vw, 13rem);
-  line-height: 0.42;
-
-  letter-spacing: -0.08em;
-
-  transform: translateX(-1vw);
-
-  color: rgba(255, 255, 255, 0.92);
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.05),
+    0 2px 12px rgba(79,64,50,0.08);
 }
 
 .hero-copy-main {
-  display: block;
+  color: rgba(248, 241, 232, 0.9);
 
-  margin-top: -0.18rem;
+  mix-blend-mode: soft-light;
 
-  font-family: "Agatho Light Caps", serif;
-  font-weight: 300;
-
-  font-size: clamp(3.25rem, 8vw, 6.8rem);
-  line-height: 0.78;
-
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-
-  color: rgba(255, 255, 255, 0.92);
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.05),
+    0 2px 12px rgba(79,64,50,0.08);
 }
 
 /* =========================================================
