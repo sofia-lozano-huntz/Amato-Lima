@@ -29,7 +29,7 @@ export default function Home() {
           <div className="hero-frame-line" />
 
           <div className="hero-film">
-            <video autoPlay muted loop playsInline>
+            <video autoPlay muted loop playsInline preload="auto">
               <source src="/intro.mp4" type="video/mp4" />
             </video>
           </div>
