@@ -30,7 +30,7 @@ export default function IntroBrand() {
         ".scroll-indicator",
         {
           opacity: 0,
-          duration: 0.5,
+          duration: 0.45,
           ease: "power2.out",
         },
         0
@@ -42,13 +42,22 @@ export default function IntroBrand() {
           height: rect.height,
           top: rect.top,
           left: rect.left,
-          borderRadius: "22px",
-          duration: 2.2,
+          borderRadius: "20px",
+          duration: 2.1,
+        },
+        0.05
+      )
+      .to(
+        videoBoxRef.current,
+        {
+          opacity: 0,
+          duration: 0.35,
+          ease: "power2.out",
           onComplete: () => {
-            videoBoxRef.current?.classList.add("is-framed");
+            videoBoxRef.current?.remove();
           },
         },
-        0.1
+        "-=0.15"
       );
   };
 
