@@ -4,18 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 export default function IntroBrand() {
-  const wrapperRef = useRef<HTMLElement | null>(null);
   const videoBoxRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const [collapsed, setCollapsed] = useState(false);
-  const [finished, setFinished] = useState(false);
   const [ready, setReady] = useState(false);
 
   const collapseIntro = () => {
     if (collapsed || !videoBoxRef.current) return;
 
-    const target = document.querySelector(".hero-video-target");
+    const target = document.querySelector(".hero-film");
     if (!target) return;
 
     const rect = target.getBoundingClientRect();
@@ -44,12 +42,13 @@ export default function IntroBrand() {
           height: rect.height,
           top: rect.top,
           left: rect.left,
-          duration: 2.35,
+          borderRadius: "22px",
+          duration: 2.2,
           onComplete: () => {
             videoBoxRef.current?.classList.add("is-framed");
           },
         },
-        0.12
+        0.1
       );
   };
 
@@ -80,34 +79,19 @@ export default function IntroBrand() {
     };
   }, [collapsed]);
 
-  useEffect(() => {
-    if (!finished) return;
-
-    const timer = setTimeout(() => {
-      collapseIntro();
-    }, 420);
-
-    return () => clearTimeout(timer);
-  }, [finished]);
-
   return (
-    <section
-      ref={wrapperRef}
-      className={`intro ${collapsed ? "is-collapsed" : ""}`}
-    >
+    <section className={`intro ${collapsed ? "is-collapsed" : ""}`}>
       <div ref={videoBoxRef} className="intro-video-box">
         <video
           ref={videoRef}
           src="/intro.mp4"
           autoPlay
           muted
-          loop
           playsInline
           preload="auto"
           className={ready ? "is-ready" : ""}
           onCanPlay={() => setReady(true)}
           onLoadedData={() => setReady(true)}
-          onEnded={() => setFinished(true)}
         />
       </div>
 
