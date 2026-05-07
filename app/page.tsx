@@ -1,38 +1,58 @@
-import IntroBrand from "@/components/intro-brand";
-
 export default function Home() {
   return (
-    <main>
-      <section id="home" className="home-hero">
-        <div className="stone-layer" />
-        <div className="stone-shadow" />
+    <section className="hero">
 
-        <header className="home-header">
-          <div className="home-location">São Paulo</div>
+      <div className="hero-wood" />
+      <div className="hero-overlay" />
 
-          <img className="home-logo" src="/logo.png" alt="Amato Lima" />
+      <nav className="hero-nav">
 
-          <button className="home-menu" aria-label="Abrir menu">
-            <span />
-            <span />
-          </button>
-        </header>
+        <span className="hero-location">
+          São Paulo
+        </span>
 
-        <div className="hero-composition">
-          <h1 className="hero-title hero-title-top">A Arte</h1>
+        <div className="hero-brand">
+          <img src="/logo.png" alt="Amato Lima" />
 
-          <div className="hero-video-target" />
-
-          <h2 className="hero-title hero-title-bottom">De Habitar</h2>
+          <div className="hero-brand-text">
+            <span>AMATO LIMA</span>
+            <div className="hero-brand-line" />
+          </div>
         </div>
 
-        <div className="home-bottom">
-          <div className="home-line" />
-          <div className="home-arrow" />
+        <div className="hero-menu">
+          <span />
+          <span />
         </div>
-      </section>
 
-      <IntroBrand />
-    </main>
+      </nav>
+
+      <div className="hero-title">
+        <span className="hero-title-arte">
+          Arte
+        </span>
+
+        <span className="hero-title-de">
+          De Habitar
+        </span>
+      </div>
+
+      <div className="hero-film">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/intro.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div className="hero-scroll">
+        <div className="hero-scroll-line" />
+        <div className="hero-scroll-arrow" />
+      </div>
+
+    </section>
   );
 }
