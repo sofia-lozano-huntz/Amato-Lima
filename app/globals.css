@@ -169,23 +169,27 @@ video {
 }
 
 .hero-copy-script {
-  color: rgba(248, 241, 232, 0.88);
+  font-family: "TT-Wellingtons", cursive;
 
-  mix-blend-mode: soft-light;
+  color: rgba(248, 241, 232, 0.88);
 
   text-shadow:
     0 0 18px rgba(255,255,255,0.05),
     0 2px 12px rgba(79,64,50,0.08);
+
+  mix-blend-mode: soft-light;
 }
 
 .hero-copy-main {
-  color: rgba(248, 241, 232, 0.9);
+  font-family: "Agatho", serif;
 
-  mix-blend-mode: soft-light;
+  color: rgba(248, 241, 232, 0.9);
 
   text-shadow:
     0 0 18px rgba(255,255,255,0.05),
     0 2px 12px rgba(79,64,50,0.08);
+
+  mix-blend-mode: soft-light;
 }
 
 /* =========================================================
