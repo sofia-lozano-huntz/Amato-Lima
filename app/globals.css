@@ -182,7 +182,7 @@ video {
 
   transform: translateX(-1vw);
 
-  color: #b29a82;
+  color: rgba(230, 215, 195, 0.55);
 }
 
 .hero-copy-main {
@@ -199,7 +199,7 @@ video {
   letter-spacing: 0.01em;
   text-transform: uppercase;
 
-  color: #b29a82;
+  color: rgba(230, 215, 195, 0.92);
 }
 
 /* =========================================================
