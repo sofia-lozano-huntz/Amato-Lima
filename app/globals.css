@@ -389,108 +389,56 @@ video {
 ========================================================= */
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: 100svh;
-  }
-
-  .hero-wood {
-    background-image: url("/wood.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
   .hero-nav {
-    top: 8px;
-    padding: 0 22px;
-  }
-
-  .hero-location {
-    margin-top: 10px;
-
-    font-size: 8px;
-    letter-spacing: 0.34em;
+    top: 4px !important;
+    padding: 0 22px !important;
+    align-items: start !important;
   }
 
   .hero-logo {
-  width: 188px;
-  transform: translateY(-4px);
+    width: 195px !important;
+    transform: translateY(-8px) !important;
+  }
+
+  .hero-location {
+    margin-top: 7px !important;
   }
 
   .hero-menu {
-    width: 38px;
-    height: 18px;
-
-    margin-top: 10px;
-  }
-
-  .hero-menu span:first-child {
-    width: 38px;
-  }
-
-  .hero-menu span:last-child {
-    width: 28px;
+    margin-top: 7px !important;
   }
 
   .hero-copy {
-    top: 24vh;
-    left: 4vw;
+    top: 24vh !important;
+    left: 4vw !important;
+    width: 100vw !important;
+    height: 180px !important;
+    position: absolute !important;
   }
 
   .hero-copy-script {
-  font-size: 7.7rem;
-  line-height: 0.34;
+    position: absolute !important;
+    top: 0 !important;
+    left: -1vw !important;
 
-  letter-spacing: -0.09em;
+    font-size: 7.7rem !important;
+    line-height: 0.34 !important;
+    letter-spacing: -0.09em !important;
 
-  transform: translateX(-1vw);
-
-  position: relative;
-  z-index: 2;
-}
-
-.hero-copy-main {
-  font-size: 3.6rem;
-  line-height: 0.78;
-
-  margin-top: -1.15rem;
-  margin-left: 0.4vw;
-
-  position: relative;
-  z-index: 1;
-}
-
-  .hero-frame-line {
-    left: 29vw;
-    top: 51vh;
-
-    width: 70vw;
-    height: 27vh;
-
-    border-radius: 34px;
+    transform: none !important;
+    z-index: 3 !important;
   }
 
-  .hero-film {
-    left: 34vw;
-    top: 56.4vh;
+  .hero-copy-main {
+    position: absolute !important;
+    top: 78px !important;
+    left: 0 !important;
 
-    width: 62vw;
+    font-size: 3.6rem !important;
+    line-height: 0.78 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
 
-    border-radius: 20px;
-  }
-
-  .hero-film video {
-    filter:
-      brightness(0.82)
-      contrast(0.92)
-      saturate(0.82);
-  }
-
-  .hero-scroll {
-    bottom: 24px;
-  }
-
-  .hero-scroll-line {
-    height: 64px;
+    z-index: 2 !important;
   }
 }
