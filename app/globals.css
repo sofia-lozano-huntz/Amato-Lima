@@ -1,5 +1,4 @@
 @font-face {
-@font-face {
   font-family: "Switzerland";
   src: url("/font/Switzerland.ttf") format("truetype");
   font-weight: 400;
@@ -52,8 +51,7 @@ video {
 }
 
 /* =========================================================
-   FUNDO WOOD
-   IMPORTANTE: arquivo correto é wood.jpg
+   FUNDO
 ========================================================= */
 
 .hero-wood {
@@ -70,7 +68,6 @@ video {
   filter: none;
 }
 
-/* camada quase invisível, só para unir tudo */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -81,7 +78,7 @@ video {
     linear-gradient(
       to bottom,
       rgba(234, 227, 214, 0.02),
-      rgba(234, 227, 214, 0.00) 45%,
+      rgba(234, 227, 214, 0.01) 45%,
       rgba(234, 227, 214, 0.02) 100%
     );
 }
@@ -89,6 +86,87 @@ video {
 /* =========================================================
    HEADER
 ========================================================= */
+
+.hero-nav {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+
+  padding: 0 28px;
+}
+
+.hero-location {
+  justify-self: start;
+  margin-top: 9px;
+
+  font-size: 8px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+
+  color: rgba(79, 64, 50, 0.64);
+}
+
+.hero-logo {
+  justify-self: center;
+
+  width: 205px;
+  height: auto;
+  display: block;
+
+  opacity: 0.96;
+}
+
+.hero-menu {
+  justify-self: end;
+
+  position: relative;
+  width: 42px;
+  height: 18px;
+
+  margin-top: 9px;
+
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.hero-menu span {
+  position: absolute;
+  right: 0;
+
+  height: 1px;
+  background: rgba(79, 64, 50, 0.72);
+}
+
+.hero-menu span:first-child {
+  top: 2px;
+  width: 42px;
+}
+
+.hero-menu span:last-child {
+  bottom: 2px;
+  width: 30px;
+}
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.hero-copy {
+  position: absolute;
+  z-index: 5;
+
+  top: 22vh;
+  left: 4vw;
+
+  color: rgba(255, 255, 255, 0.94);
+}
 
 .hero-copy-script {
   display: block;
@@ -122,101 +200,40 @@ video {
 
   color: rgba(255, 255, 255, 0.92);
 }
-  
-.hero-menu span {
-  position: absolute;
-  right: 0;
-
-  height: 1px;
-  background: rgba(79, 64, 50, 0.72);
-}
-
-.hero-menu span:first-child {
-  top: 3px;
-  width: 44px;
-}
-
-.hero-menu span:last-child {
-  bottom: 3px;
-  width: 32px;
-}
 
 /* =========================================================
-   COPY
-========================================================= */
-
-.hero-copy {
-  position: absolute;
-  z-index: 5;
-
-  top: 24.5vh;
-  left: 4.1vw;
-
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.hero-copy-script {
-  display: block;
-
-  font-family: "Switzerland", serif;
-  font-weight: 400;
-
-  font-size: clamp(6rem, 14.8vw, 12.2rem);
-  line-height: 0.48;
-
-  letter-spacing: -0.06em;
-
-  transform: translateX(-0.35vw);
-}
-
-.hero-copy-main {
-  display: block;
-
-  margin-top: -0.18rem;
-
-  font-family: "Agatho Light Caps", serif;
-  font-weight: 300;
-
-  font-size: clamp(2.9rem, 6.7vw, 6.2rem);
-  line-height: 0.82;
-
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-}
-
-/* =========================================================
-   FRAME FINO ATRÁS DO VÍDEO
+   FRAME
 ========================================================= */
 
 .hero-frame-line {
   position: absolute;
   z-index: 4;
 
-  left: 28.5vw;
-  top: 52.3vh;
+  left: 28vw;
+  top: 52vh;
 
-  width: 63.5vw;
-  height: 31.5vh;
+  width: 64vw;
+  height: 31vh;
 
-  border: 1px solid rgba(79, 64, 50, 0.24);
-  border-radius: 44px;
+  border: 1px solid rgba(79, 64, 50, 0.22);
+  border-radius: 42px;
 
   pointer-events: none;
 }
 
 /* =========================================================
-   VÍDEO
+   FILME
 ========================================================= */
 
 .hero-film {
   position: absolute;
   z-index: 5;
 
-  left: 37vw;
-  top: 58.2vh;
+  left: 36vw;
+  top: 57vh;
 
-  width: 45vw;
-  max-width: 690px;
+  width: 46vw;
+  max-width: 700px;
 
   aspect-ratio: 16 / 9;
 
@@ -226,7 +243,9 @@ video {
 
   background: rgba(79, 64, 50, 0.12);
 
-  box-shadow: 0 28px 70px rgba(79, 64, 50, 0.18);
+  box-shadow:
+    0 28px 70px rgba(79, 64, 50, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
 
 .hero-film video {
@@ -234,7 +253,10 @@ video {
   height: 100%;
   object-fit: cover;
 
-  filter: brightness(0.86) contrast(0.92) saturate(0.82);
+  filter:
+    brightness(0.84)
+    contrast(0.92)
+    saturate(0.82);
 }
 
 /* =========================================================
@@ -302,7 +324,13 @@ video {
   overflow: hidden;
   background: #eae3d6;
 
-  will-change: width, height, top, left, border-radius, opacity;
+  will-change:
+    width,
+    height,
+    top,
+    left,
+    border-radius,
+    opacity;
 }
 
 .intro-video-box video {
@@ -319,7 +347,10 @@ video {
   opacity: 1;
 }
 
-/* convite da intro */
+/* =========================================================
+   ENTRAR
+========================================================= */
+
 .scroll-indicator {
   position: fixed;
 
@@ -354,7 +385,6 @@ video {
 
 /* =========================================================
    MOBILE
-   Mantém a composição da referência, sem apagar wood.jpg.
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -367,33 +397,29 @@ video {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-
-    transform: none;
-    filter: none;
-  }
-
-  .hero-overlay {
-    background: rgba(234, 227, 214, 0.015);
   }
 
   .hero-nav {
-    top: 26px;
-    padding: 0 27px;
+    top: 12px;
+    padding: 0 22px;
   }
 
   .hero-location {
+    margin-top: 10px;
+
     font-size: 8px;
     letter-spacing: 0.34em;
-    color: rgba(79, 64, 50, 0.64);
   }
 
   .hero-logo {
-    width: 172px;
+    width: 188px;
   }
 
   .hero-menu {
     width: 38px;
-    height: 19px;
+    height: 18px;
+
+    margin-top: 10px;
   }
 
   .hero-menu span:first-child {
@@ -405,40 +431,39 @@ video {
   }
 
   .hero-copy {
-    top: 23vh;
-    left: 5.2vw;
+    top: 21vh;
+    left: 4vw;
   }
 
   .hero-copy-script {
-    font-size: 7.6rem;
-    line-height: 0.42;
-    letter-spacing: -0.075em;
+    font-size: 7.7rem;
+    line-height: 0.4;
 
-    transform: translateX(-0.9vw);
+    letter-spacing: -0.09em;
+
+    transform: translateX(-1vw);
   }
 
   .hero-copy-main {
-    font-size: 3.45rem;
-    line-height: 0.78;
+    font-size: 3.6rem;
+    line-height: 0.8;
 
-    margin-top: -0.1rem;
-    letter-spacing: 0.01em;
+    margin-top: -0.2rem;
   }
 
   .hero-frame-line {
-    left: 30vw;
-    top: 51.5vh;
+    left: 29vw;
+    top: 51vh;
 
     width: 70vw;
     height: 27vh;
 
     border-radius: 34px;
-    border-color: rgba(79, 64, 50, 0.22);
   }
 
   .hero-film {
     left: 34vw;
-    top: 56.8vh;
+    top: 56.4vh;
 
     width: 62vw;
 
@@ -446,7 +471,10 @@ video {
   }
 
   .hero-film video {
-    filter: brightness(0.82) contrast(0.92) saturate(0.82);
+    filter:
+      brightness(0.82)
+      contrast(0.92)
+      saturate(0.82);
   }
 
   .hero-scroll {
@@ -454,6 +482,6 @@ video {
   }
 
   .hero-scroll-line {
-    height: 58px;
+    height: 64px;
   }
-        }
+}
