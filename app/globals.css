@@ -17,8 +17,10 @@ body {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  background: #070605;
+
+  background: #eae3d6;
   color: #efe8dc;
+
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -31,21 +33,25 @@ video {
   pointer-events: none;
 }
 
-/* HOME HERO */
+/* HERO */
 
 .home-hero {
   position: relative;
+
   width: 100%;
   min-height: 100svh;
+
   overflow: hidden;
-  background: #080706;
+
+  background: #eae3d6;
 }
 
-/* STONE BACKGROUND */
+/* STONE */
 
 .stone-layer {
   position: absolute;
   inset: 0;
+
   z-index: 0;
 
   background-image: url("/stone.jpg");
@@ -56,9 +62,9 @@ video {
   transform: scale(1.03);
 
   filter:
-    brightness(0.82)
-    saturate(0.92)
-    contrast(0.94);
+    brightness(1.08)
+    saturate(0.9)
+    contrast(0.82);
 
   animation: stoneBreath 24s ease-in-out infinite alternate;
 }
@@ -66,34 +72,37 @@ video {
 .stone-shadow {
   position: absolute;
   inset: 0;
+
   z-index: 1;
+
   pointer-events: none;
 
   background:
+
     radial-gradient(
-      circle at 56% 50%,
-      rgba(255, 214, 160, 0.045),
-      transparent 32%
+      circle at 52% 48%,
+      rgba(234, 227, 214, 0.18),
+      transparent 34%
     ),
 
     radial-gradient(
-      circle at 48% 82%,
-      rgba(214, 180, 124, 0.1),
+      circle at 50% 82%,
+      rgba(191, 163, 122, 0.14),
       transparent 36%
     ),
 
     linear-gradient(
       to right,
-      rgba(0,0,0,0.74),
-      transparent 31%,
-      rgba(0,0,0,0.3)
+      rgba(79, 64, 50, 0.38),
+      transparent 34%,
+      rgba(79, 64, 50, 0.18)
     ),
 
     linear-gradient(
       to bottom,
-      rgba(0,0,0,0.42),
-      transparent 30%,
-      rgba(0,0,0,0.34)
+      rgba(79, 64, 50, 0.22),
+      transparent 34%,
+      rgba(79, 64, 50, 0.22)
     );
 }
 
@@ -111,10 +120,11 @@ video {
 
 .home-header {
   position: absolute;
+
   top: 10px;
   left: 0;
 
-  z-index: 8;
+  z-index: 10;
 
   width: 100%;
 
@@ -140,9 +150,9 @@ video {
 
   background: linear-gradient(
     105deg,
-    rgba(239,232,220,0.1) 0%,
-    rgba(233,208,176,0.68) 48%,
-    rgba(239,232,220,0.1) 100%
+    rgba(234, 227, 214, 0.14) 0%,
+    rgba(214, 198, 168, 0.75) 48%,
+    rgba(234, 227, 214, 0.14) 100%
   );
 
   background-size: 240% 100%;
@@ -156,14 +166,16 @@ video {
 @keyframes subtleLight {
   from {
     background-position: 0% 50%;
-    opacity: 0.22;
+    opacity: 0.18;
   }
 
   to {
     background-position: 100% 50%;
-    opacity: 0.52;
+    opacity: 0.5;
   }
 }
+
+/* LOGO */
 
 .home-logo {
   justify-self: center;
@@ -173,12 +185,12 @@ video {
 
   display: block;
 
-  opacity: 0.72;
+  opacity: 0.68;
 
   filter:
-    brightness(0.92)
+    brightness(0.96)
     saturate(0.88)
-    contrast(0.95);
+    contrast(0.94);
 
   mix-blend-mode: screen;
 }
@@ -205,7 +217,7 @@ video {
 
   height: 0.5px;
 
-  background: rgba(231, 212, 185, 0.22);
+  background: rgba(214, 198, 168, 0.34);
 
   filter: blur(0.2px);
 }
@@ -221,7 +233,7 @@ video {
   right: 5px;
 }
 
-/* HERO COMPOSITION */
+/* COMPOSITION */
 
 .hero-composition {
   position: relative;
@@ -233,7 +245,7 @@ video {
   flex-direction: column;
 }
 
-/* HERO TITLES */
+/* TITLES */
 
 .hero-title {
   font-family: "TT Wellingtons", serif;
@@ -245,10 +257,10 @@ video {
 
   letter-spacing: 0.22em;
 
-  color: rgba(205, 184, 152, 0.38);
+  color: rgba(214, 198, 168, 0.58);
 
   text-shadow:
-    0 0 24px rgba(0,0,0,0.18);
+    0 0 24px rgba(0,0,0,0.08);
 
   mix-blend-mode: screen;
 
@@ -279,7 +291,7 @@ video {
   font-size: clamp(1.45rem, 6.4vw, 2.5rem);
 }
 
-/* VIDEO TARGET */
+/* VIDEO */
 
 .hero-video-target {
   position: relative;
@@ -303,8 +315,8 @@ video {
   isolation: isolate;
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.22),
-    0 0 120px rgba(0,0,0,0.16);
+    0 30px 80px rgba(79,64,50,0.12),
+    0 0 120px rgba(79,64,50,0.08);
 }
 
 .hero-video-target video {
@@ -316,9 +328,9 @@ video {
   transform: translateY(-7%);
 
   filter:
-    brightness(0.82)
-    contrast(0.92)
-    saturate(0.88);
+    brightness(0.96)
+    contrast(0.88)
+    saturate(0.84);
 
   animation:
     filmBreath 18s ease-in-out infinite alternate;
@@ -338,7 +350,7 @@ video {
   }
 }
 
-/* VIDEO CINEMATIC OVERLAY */
+/* VIDEO OVERLAY */
 
 .hero-video-target::after {
   content: "";
@@ -351,20 +363,21 @@ video {
   pointer-events: none;
 
   background:
+
     linear-gradient(
       to right,
-      rgba(0,0,0,0.3) 0%,
-      rgba(0,0,0,0.04) 22%,
-      rgba(0,0,0,0) 50%,
-      rgba(0,0,0,0.08) 78%,
-      rgba(0,0,0,0.26) 100%
+      rgba(79,64,50,0.16) 0%,
+      rgba(79,64,50,0.02) 22%,
+      rgba(79,64,50,0) 50%,
+      rgba(79,64,50,0.04) 78%,
+      rgba(79,64,50,0.14) 100%
     ),
 
     linear-gradient(
       to bottom,
-      rgba(255,255,255,0.04) 0%,
+      rgba(255,255,255,0.06) 0%,
       rgba(255,255,255,0) 40%,
-      rgba(0,0,0,0.18) 100%
+      rgba(79,64,50,0.08) 100%
     );
 }
 
@@ -376,7 +389,7 @@ video {
 
   z-index: 3;
 
-  opacity: 0.035;
+  opacity: 0.03;
 
   mix-blend-mode: soft-light;
 
@@ -415,9 +428,9 @@ video {
   background:
     linear-gradient(
       to right,
-      rgba(239,232,220,0),
-      rgba(239,232,220,0.28),
-      rgba(239,232,220,0)
+      rgba(234,227,214,0),
+      rgba(214,198,168,0.34),
+      rgba(234,227,214,0)
     );
 
   filter: blur(0.15px);
@@ -429,8 +442,8 @@ video {
 
   margin-top: 20px;
 
-  border-right: 0.8px solid rgba(239,232,220,0.5);
-  border-bottom: 0.8px solid rgba(239,232,220,0.5);
+  border-right: 0.8px solid rgba(214,198,168,0.56);
+  border-bottom: 0.8px solid rgba(214,198,168,0.56);
 
   transform: rotate(45deg);
 
@@ -491,7 +504,7 @@ video {
 
   overflow: hidden;
 
-  background: #080706;
+  background: #eae3d6;
 
   will-change:
     width,
@@ -516,8 +529,8 @@ video {
   opacity: 0;
 
   filter:
-    brightness(0.88)
-    contrast(0.9)
+    brightness(0.98)
+    contrast(0.86)
     saturate(0.82);
 
   transition:
@@ -529,7 +542,7 @@ video {
   opacity: 1;
 }
 
-/* SCROLL INDICATOR / ENTRAR */
+/* ENTRAR */
 
 .scroll-indicator {
   position: fixed;
@@ -548,10 +561,11 @@ video {
 
 .scroll-indicator p {
   font-size: 9px;
+
   letter-spacing: 0.42em;
   text-transform: uppercase;
 
-  color: rgba(239,232,220,0.78);
+  color: rgba(214,198,168,0.82);
 }
 
 .scroll-indicator span {
@@ -562,7 +576,7 @@ video {
 
   margin: 12px auto 0;
 
-  background: rgba(239,232,220,0.44);
+  background: rgba(214,198,168,0.48);
 }
 
 /* MOBILE */
