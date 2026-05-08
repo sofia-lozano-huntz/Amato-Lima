@@ -96,6 +96,7 @@ export default function IntroBrand() {
           src="/intro.mp4"
           autoPlay
           muted
+          loop
           playsInline
           preload="auto"
           className={ready ? "is-ready" : ""}
