@@ -368,8 +368,12 @@ video {
 
   font-family: "Switzerland", serif;
   font-size: 6.6rem;
-  line-height: 1.2;
+  line-height: 1.55;
   letter-spacing: -0.08em;
+
+  padding-top: 18px;
+
+  overflow: visible;
 
   color: rgba(232, 218, 198, 0.74);
 
