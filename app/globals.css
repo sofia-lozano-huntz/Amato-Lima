@@ -364,14 +364,17 @@ video {
   .hero-copy-script {
   position: relative;
   top: 0;
-  left: -8vw;
+  left: -14vw;
 
   font-family: "Switzerland", serif;
   font-size: 6.6rem;
   line-height: 1.55;
   letter-spacing: -0.08em;
 
-  padding-top: 18px;
+  width: 120%;
+
+  padding-top: 28px;
+  padding-left: 24px;
 
   overflow: visible;
 
