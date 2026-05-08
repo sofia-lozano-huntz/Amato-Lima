@@ -121,6 +121,7 @@ video {
   display: block;
 
   opacity: 0.96;
+  transform: translateY(-14px);
 }
 
 .hero-menu {
