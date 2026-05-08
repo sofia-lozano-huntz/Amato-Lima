@@ -389,16 +389,68 @@ video {
    MOBILE
 ========================================================= */
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100svh;
+    overflow: visible !important;
+  }
+
+  .hero-wood {
+    background-image: url("/wood.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-nav {
+    top: 10px;
+    padding: 0 22px;
+  }
+
+  .hero-location {
+    margin-top: 6px;
+
+    font-size: 8px;
+    letter-spacing: 0.34em;
+
+    color: rgba(79, 64, 50, 0.48);
+  }
+
+  .hero-logo {
+    width: 188px;
+
+    position: relative;
+    top: -8px;
+  }
+
+  .hero-menu {
+    width: 38px;
+    height: 18px;
+
+    margin-top: 6px;
+  }
+
+  .hero-menu span:first-child {
+    width: 38px;
+  }
+
+  .hero-menu span:last-child {
+    width: 28px;
+  }
+
+  /* =========================================
+     COPY
+  ========================================= */
 
   .hero-copy {
     position: absolute !important;
 
     top: 26vh !important;
-    left: 6vw !important;
+    left: 4vw !important;
 
-    width: 100vw !important;
-    height: 420px !important;
+    width: 140vw !important;
+    height: 440px !important;
 
     overflow: visible !important;
 
@@ -413,11 +465,12 @@ video {
 
     width: 140vw !important;
 
-    white-space: nowrap !important;
     overflow: visible !important;
+    white-space: nowrap !important;
+
+    clip-path: none !important;
 
     font-size: 5.2rem !important;
-
     line-height: 1.15 !important;
 
     letter-spacing: -0.08em !important;
@@ -441,22 +494,25 @@ video {
     -webkit-text-fill-color: transparent;
 
     animation: luxuryShine 16s linear infinite;
+
+    opacity: 1 !important;
   }
 
   .hero-copy-main {
     position: absolute !important;
 
-    top: 58px !important;
-    left: 1vw !important;
+    top: 62px !important;
+    left: 0 !important;
 
-    width: 100vw !important;
+    width: 140vw !important;
 
+    overflow: visible !important;
     white-space: nowrap !important;
 
     font-size: 2.5rem !important;
-    line-height: 0.95 !important;
+    line-height: 0.92 !important;
 
-    letter-spacing: -0.02em !important;
+    letter-spacing: -0.03em !important;
 
     z-index: 2 !important;
 
@@ -477,6 +533,8 @@ video {
     -webkit-text-fill-color: transparent;
 
     animation: luxuryShine 16s linear infinite;
+
+    opacity: 0.98 !important;
   }
 
   @keyframes luxuryShine {
@@ -487,19 +545,74 @@ video {
     100% {
       background-position: -200% center;
     }
-    @media (max-width: 768px) {
-  .hero {
-    overflow: visible !important;
   }
 
-  .hero-copy {
-    overflow: visible !important;
+  /* =========================================
+     FRAME
+  ========================================= */
+
+  .hero-frame-line {
+    left: 30vw;
+    top: 56vh;
+
+    width: 66vw;
+    height: 22vh;
+
+    border-radius: 34px;
+
+    border: 1px solid rgba(79, 64, 50, 0.14);
   }
 
-  .hero-copy-script {
-    overflow: visible !important;
-    clip-path: none !important;
-  }
+  /* =========================================
+     FILM
+  ========================================= */
+
+  .hero-film {
+    left: 38vw;
+    top: 60vh;
+
+    width: 56vw;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background: rgba(79, 64, 50, 0.08);
+
+    box-shadow:
+      0 20px 50px rgba(79, 64, 50, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
   }
 
+  .hero-film video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+      brightness(0.82)
+      contrast(0.94)
+      saturate(0.82);
+  }
+
+  /* =========================================
+     SCROLL
+  ========================================= */
+
+  .hero-scroll {
+    bottom: 26px;
+  }
+
+  .hero-scroll-line {
+    height: 62px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(79, 64, 50, 0),
+        rgba(79, 64, 50, 0.28),
+        rgba(79, 64, 50, 0)
+      );
+  }
 }
