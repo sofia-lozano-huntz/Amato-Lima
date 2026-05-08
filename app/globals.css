@@ -391,23 +391,26 @@ video {
 
 @media (max-width: 768px) {
 
-  .hero-copy {
-    position: absolute !important;
+.hero-copy {
+  position: absolute !important;
 
-    top: 26vh !important;
-    left: 6vw !important;
+  top: 26vh !important;
+  left: 6vw !important;
 
-    width: 90vw !important;
-    height: 220px !important;
+  width: 100vw !important;
+  height: 420px !important;
 
-    z-index: 5 !important;
+  overflow: visible !important;
+
+  z-index: 5 !important;
   }
-
+    
   .hero-copy-script {
     position: absolute !important;
 
     top: 0 !important;
     left: -1.5vw !important;
+    white-space: nowrap;
 
     font-size: 5.2rem !important;
     line-height: 0.78 !important;
