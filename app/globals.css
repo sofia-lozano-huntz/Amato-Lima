@@ -416,7 +416,25 @@ video {
 
     z-index: 3 !important;
 
-    color: rgba(94, 0, 8, 0.72) !important;
+    color: #efe3cf;
+
+background: linear-gradient(
+  90deg,
+  #cdb79d 0%,
+  #f7efe3 18%,
+  #e7d3ba 36%,
+  #fff6ea 50%,
+  #dcc1a2 68%,
+  #f6eee1 82%,
+  #cdb79d 100%
+);
+
+background-size: 220% auto;
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+animation: luxuryShine 16s linear infinite;
   }
 
   .hero-copy-main {
@@ -432,7 +450,35 @@ video {
 
     z-index: 2 !important;
 
-    color: rgba(94, 0, 8, 0.92) !important;
+    color: #efe3cf;
+
+background: linear-gradient(
+  90deg,
+  #cdb79d 0%,
+  #f7efe3 18%,
+  #e7d3ba 36%,
+  #fff6ea 50%,
+  #dcc1a2 68%,
+  #f6eee1 82%,
+  #cdb79d 100%
+);
+
+background-size: 220% auto;
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+animation: luxuryShine 16s linear infinite;
+  }
+
+  @keyframes luxuryShine {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
   }
 
 }
