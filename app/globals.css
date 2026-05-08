@@ -451,90 +451,98 @@ video {
   ========================================= */
 
   .hero-copy {
-    position: absolute !important;
+  .hero-copy {
+  position: absolute !important;
 
-    top: 24vh !important;
-    left: 4vw !important;
+  top: 30vh !important;
+  left: 50% !important;
 
-    width: 92vw !important;
-    height: 220px !important;
+  width: 100% !important;
+  height: 260px !important;
 
-    overflow: visible !important;
+  transform: translateX(-50%) !important;
 
-    z-index: 5 !important;
+  overflow: visible !important;
+
+  z-index: 5 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
   }
 
   /* ARTE */
 
   .hero-copy-script {
-    position: absolute !important;
+  .hero-copy-script {
+  position: relative !important;
 
-    top: -6px !important;
-    left: -2vw !important;
+  top: 0 !important;
+  left: 0 !important;
 
-    font-family: "Switzerland", serif !important;
+  font-family: "Switzerland", serif !important;
 
-    font-size: 5.4rem !important;
-    line-height: 6.0 !important;
+  font-size: 6.6rem !important;
+  line-height: 1.02 !important;
 
-    letter-spacing: -0.08em !important;
+  letter-spacing: -0.08em !important;
 
-    z-index: 3 !important;
+  z-index: 3 !important;
 
-    background: linear-gradient(
-      90deg,
-      #cbb49a 0%,
-      #f6eee4 20%,
-      #cbb49a 40%,
-      #f8f3eb 50%,
-      #cbb49a 60%,
-      #f6eee4 80%,
-      #cbb49a 100%
-    );
+  background: linear-gradient(
+    90deg,
+    #cbb49a 0%,
+    #f6eee4 20%,
+    #cbb49a 40%,
+    #f8f3eb 50%,
+    #cbb49a 60%,
+    #f6eee4 80%,
+    #cbb49a 100%
+  );
 
-    background-size: 220% auto;
+  background-size: 220% auto;
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    animation: luxuryShine 12s linear infinite;
+  animation: luxuryShine 12s linear infinite;
   }
-
+    
   /* DE HABITAR */
 
   .hero-copy-main {
-    position: absolute !important;
+  position: relative !important;
 
-    top: 58px !important;
-    left: 0vw !important;
+  top: -28px !important;
+  left: 0 !important;
 
-    font-family: "Agatho Light Caps", serif !important;
-    font-weight: 300 !important;
+  font-family: "Agatho Light Caps", serif !important;
+  font-weight: 300 !important;
 
-    font-size: 2.7rem !important;
-    line-height: 2.0 !important;
+  font-size: 2.9rem !important;
+  line-height: 0.9 !important;
 
-    letter-spacing: 0.02em !important;
+  letter-spacing: 0.03em !important;
 
-    z-index: 2 !important;
+  z-index: 2 !important;
 
-    background: linear-gradient(
-      90deg,
-      #cbb49a 0%,
-      #f6eee4 20%,
-      #cbb49a 40%,
-      #f8f3eb 50%,
-      #cbb49a 60%,
-      #f6eee4 80%,
-      #cbb49a 100%
-    );
+  background: linear-gradient(
+    90deg,
+    #cbb49a 0%,
+    #f6eee4 20%,
+    #cbb49a 40%,
+    #f8f3eb 50%,
+    #cbb49a 60%,
+    #f6eee4 80%,
+    #cbb49a 100%
+  );
 
-    background-size: 220% auto;
+  background-size: 220% auto;
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    animation: luxuryShine 14s linear infinite;
+  animation: luxuryShine 14s linear infinite;
   }
 
   /* =========================================
