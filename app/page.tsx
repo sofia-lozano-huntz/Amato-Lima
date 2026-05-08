@@ -22,7 +22,7 @@ export default function Home() {
           </header>
 
           <div className="hero-copy">
-            <span className="hero-copy-script">Arte</span>
+            <span className="hero-copy-script">A arte</span>
             <span className="hero-copy-main">DE HABITAR</span>
           </div>
 
