@@ -389,99 +389,104 @@ video {
    MOBILE
 ========================================================= */
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
 
-.hero-copy {
-  position: absolute !important;
+  .hero-copy {
+    position: absolute !important;
 
-  top: 26vh !important;
-  left: 6vw !important;
+    top: 26vh !important;
+    left: 6vw !important;
 
-  width: 100vw !important;
-  height: 420px !important;
+    width: 100vw !important;
+    height: 420px !important;
 
-  overflow: visible !important;
+    overflow: visible !important;
 
-  z-index: 5 !important;
+    z-index: 5 !important;
   }
-    
+
   .hero-copy-script {
     position: absolute !important;
 
-    top: 0 !important;
+    top: -12px !important;
     left: -1.5vw !important;
-    white-space: nowrap;
+
+    width: 100vw !important;
+
+    white-space: nowrap !important;
+    overflow: visible !important;
 
     font-size: 5.2rem !important;
-    line-height: 0.78 !important;
+
+    line-height: 1.15 !important;
 
     letter-spacing: -0.08em !important;
 
     z-index: 3 !important;
 
-    color: #efe3cf;
+    background: linear-gradient(
+      90deg,
+      #cdb79d 0%,
+      #f7efe3 18%,
+      #e7d3ba 36%,
+      #fff6ea 50%,
+      #dcc1a2 68%,
+      #f6eee1 82%,
+      #cdb79d 100%
+    );
 
-background: linear-gradient(
-  90deg,
-  #cdb79d 0%,
-  #f7efe3 18%,
-  #e7d3ba 36%,
-  #fff6ea 50%,
-  #dcc1a2 68%,
-  #f6eee1 82%,
-  #cdb79d 100%
-);
+    background-size: 220% auto;
 
-background-size: 220% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
-animation: luxuryShine 16s linear infinite;
+    animation: luxuryShine 16s linear infinite;
   }
 
   .hero-copy-main {
     position: absolute !important;
 
-    top: 38px !important;
+    top: 58px !important;
     left: 1vw !important;
 
+    width: 100vw !important;
+
+    white-space: nowrap !important;
+
     font-size: 2.5rem !important;
-    line-height: 0.88 !important;
+    line-height: 0.95 !important;
 
     letter-spacing: -0.02em !important;
 
     z-index: 2 !important;
 
-    color: #efe3cf;
+    background: linear-gradient(
+      90deg,
+      #cdb79d 0%,
+      #f7efe3 18%,
+      #e7d3ba 36%,
+      #fff6ea 50%,
+      #dcc1a2 68%,
+      #f6eee1 82%,
+      #cdb79d 100%
+    );
 
-background: linear-gradient(
-  90deg,
-  #cdb79d 0%,
-  #f7efe3 18%,
-  #e7d3ba 36%,
-  #fff6ea 50%,
-  #dcc1a2 68%,
-  #f6eee1 82%,
-  #cdb79d 100%
-);
+    background-size: 220% auto;
 
-background-size: 220% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
-animation: luxuryShine 16s linear infinite;
+    animation: luxuryShine 16s linear infinite;
   }
 
   @keyframes luxuryShine {
-  0% {
-    background-position: 200% center;
-  }
+    0% {
+      background-position: 200% center;
+    }
 
-  100% {
-    background-position: -200% center;
-  }
+    100% {
+      background-position: -200% center;
+    }
   }
 
 }
