@@ -21,10 +21,8 @@ export default function Home() {
             </button>
           </header>
 
-          <div className="hero-copy">
-            <span className="hero-copy-script">Arte</span>
-            <span className="hero-copy-main">De Habitar</span>
-          </div>
+          <span className="hero-copy-script" data-text="Arte">Arte</span>
+<span className="hero-copy-main" data-text="DE HABITAR">DE HABITAR</span>
 
           <div className="hero-frame-line" />
 
