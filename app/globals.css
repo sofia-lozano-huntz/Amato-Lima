@@ -393,7 +393,6 @@ video {
 
   .hero {
     min-height: 100svh;
-    overflow: visible !important;
   }
 
   .hero-wood {
@@ -403,32 +402,40 @@ video {
     background-repeat: no-repeat;
   }
 
+  /* =========================================
+     HEADER
+  ========================================= */
+
   .hero-nav {
     top: 10px;
     padding: 0 22px;
   }
 
   .hero-location {
-    margin-top: 6px;
+    margin-top: 4px;
 
     font-size: 8px;
     letter-spacing: 0.34em;
 
-    color: rgba(79, 64, 50, 0.48);
+    color: rgba(79, 64, 50, 0.58);
   }
 
   .hero-logo {
     width: 188px;
 
     position: relative;
-    top: -8px;
+    top: -6px;
   }
 
   .hero-menu {
     width: 38px;
     height: 18px;
 
-    margin-top: 6px;
+    margin-top: 4px;
+  }
+
+  .hero-menu span {
+    background: rgba(79, 64, 50, 0.72);
   }
 
   .hero-menu span:first-child {
@@ -446,81 +453,168 @@ video {
   .hero-copy {
     position: absolute !important;
 
-    top: 26vh !important;
+    top: 24vh !important;
     left: 4vw !important;
 
-    width: 140vw !important;
-    height: 440px !important;
-
-    overflow: visible !important;
+    width: 92vw !important;
+    height: 220px !important;
 
     z-index: 5 !important;
   }
 
+  /* ARTE */
+
   .hero-copy-script {
-  position: absolute !important;
+    position: absolute !important;
 
-  top: 0 !important;
-  left: -1.5vw !important;
+    top: -6px !important;
+    left: -2vw !important;
 
-  font-size: 5.2rem !important;
-  line-height: 0.78 !important;
+    font-family: "Switzerland", serif !important;
 
-  letter-spacing: -0.08em !important;
+    font-size: 5.4rem !important;
+    line-height: 0.78 !important;
 
-  z-index: 3 !important;
+    letter-spacing: -0.08em !important;
 
-  color: #e7d7c3 !important;
+    z-index: 3 !important;
 
-  background: linear-gradient(
-    90deg,
-    #cbb49a 0%,
-    #f6eee4 20%,
-    #cbb49a 40%,
-    #f8f3eb 50%,
-    #cbb49a 60%,
-    #f6eee4 80%,
-    #cbb49a 100%
-  );
+    background: linear-gradient(
+      90deg,
+      #cbb49a 0%,
+      #f6eee4 20%,
+      #cbb49a 40%,
+      #f8f3eb 50%,
+      #cbb49a 60%,
+      #f6eee4 80%,
+      #cbb49a 100%
+    );
 
-  background-size: 220% auto;
+    background-size: 220% auto;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  animation: luxuryShine 16s linear infinite;
+    animation: luxuryShine 12s linear infinite;
   }
 
-.hero-copy-main {
-  position: absolute !important;
+  /* DE HABITAR */
 
-  top: 38px !important;
-  left: 1vw !important;
+  .hero-copy-main {
+    position: absolute !important;
 
-  font-size: 2.5rem !important;
+    top: 58px !important;
+    left: 0vw !important;
 
-  z-index: 2 !important;
+    font-family: "Agatho Light Caps", serif !important;
+    font-weight: 300 !important;
 
-  background: linear-gradient(
-    90deg,
-    #cbb49a 0%,
-    #f6eee4 20%,
-    #cbb49a 40%,
-    #f8f3eb 50%,
-    #cbb49a 60%,
-    #f6eee4 80%,
-    #cbb49a 100%
-  );
+    font-size: 2.7rem !important;
+    line-height: 0.88 !important;
 
-  background-size: 220% auto;
+    letter-spacing: 0.02em !important;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    z-index: 2 !important;
 
-  animation: luxuryShine 18s linear infinite;
+    background: linear-gradient(
+      90deg,
+      #cbb49a 0%,
+      #f6eee4 20%,
+      #cbb49a 40%,
+      #f8f3eb 50%,
+      #cbb49a 60%,
+      #f6eee4 80%,
+      #cbb49a 100%
+    );
+
+    background-size: 220% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: luxuryShine 14s linear infinite;
+  }
+
+  /* =========================================
+     FRAME
+  ========================================= */
+
+  .hero-frame-line {
+    left: 28vw;
+    top: 53vh;
+
+    width: 68vw;
+    height: 26vh;
+
+    border: 1px solid rgba(79, 64, 50, 0.18);
+    border-radius: 36px;
+  }
+
+  /* =========================================
+     FILME
+  ========================================= */
+
+  .hero-film {
+    left: 34vw;
+    top: 58vh;
+
+    width: 62vw;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: rgba(79, 64, 50, 0.12);
+
+    box-shadow:
+      0 28px 70px rgba(79, 64, 50, 0.16),
+      0 0 0 1px rgba(255,255,255,0.04) inset;
+  }
+
+  .hero-film video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+      brightness(0.84)
+      contrast(0.92)
+      saturate(0.84);
+  }
+
+  /* =========================================
+     SCROLL
+  ========================================= */
+
+  .hero-scroll {
+    bottom: 24px;
+  }
+
+  .hero-scroll-line {
+    width: 1px;
+    height: 62px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(79,64,50,0),
+        rgba(79,64,50,0.44),
+        rgba(79,64,50,0)
+      );
+  }
+
+  .hero-scroll-arrow {
+    display: none;
+  }
 }
 
+/* =========================================
+   SHINE EFFECT
+========================================= */
+
 @keyframes luxuryShine {
+
   0% {
     background-position: 200% center;
   }
