@@ -461,9 +461,10 @@ video {
     position: absolute !important;
 
     top: -12px !important;
-    left: 4vw !important;
+    left: 2vw !important;
 
-    width: 140vw !important;
+    width: 100vw !important;
+    padding-left: 7vw !important;
 
     overflow: visible !important;
     white-space: nowrap !important;
