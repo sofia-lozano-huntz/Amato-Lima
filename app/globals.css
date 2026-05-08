@@ -389,56 +389,49 @@ video {
 ========================================================= */
 
 @media (max-width: 768px) {
-  .hero-nav {
-    top: 4px !important;
-    padding: 0 22px !important;
-    align-items: start !important;
-  }
-
-  .hero-logo {
-    width: 195px !important;
-    transform: translateY(-8px) !important;
-  }
-
-  .hero-location {
-    margin-top: 7px !important;
-  }
-
-  .hero-menu {
-    margin-top: 7px !important;
-  }
 
   .hero-copy {
-    top: 24vh !important;
-    left: 4vw !important;
-    width: 100vw !important;
-    height: 180px !important;
     position: absolute !important;
+
+    top: 26vh !important;
+    left: 6vw !important;
+
+    width: 90vw !important;
+    height: 220px !important;
+
+    z-index: 5 !important;
   }
 
   .hero-copy-script {
     position: absolute !important;
+
     top: 0 !important;
-    left: -1vw !important;
+    left: -1.5vw !important;
 
-    font-size: 7.7rem !important;
-    line-height: 0.34 !important;
-    letter-spacing: -0.09em !important;
+    font-size: 7.8rem !important;
+    line-height: 0.78 !important;
 
-    transform: none !important;
+    letter-spacing: -0.08em !important;
+
     z-index: 3 !important;
+
+    color: rgba(94, 0, 8, 0.72) !important;
   }
 
   .hero-copy-main {
     position: absolute !important;
-    top: 78px !important;
-    left: 0 !important;
 
-    font-size: 3.6rem !important;
-    line-height: 0.78 !important;
-    margin-top: 0 !important;
-    margin-left: 0 !important;
+    top: 74px !important;
+    left: 1vw !important;
+
+    font-size: 3.5rem !important;
+    line-height: 0.88 !important;
+
+    letter-spacing: -0.02em !important;
 
     z-index: 2 !important;
+
+    color: rgba(94, 0, 8, 0.92) !important;
   }
+
 }
