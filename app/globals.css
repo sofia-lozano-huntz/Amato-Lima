@@ -352,7 +352,7 @@ video {
   .hero-copy {
     top: 30vh;
     left: 50%;
-    width: 100%;
+    width: 160vw;
     height: 260px;
     transform: translateX(-50%);
     overflow: visible;
@@ -364,7 +364,7 @@ video {
   .hero-copy-script {
     position: relative;
     top: 0;
-    left: 0;
+    left: -12vw;
     font-size: 6.6rem;
     line-height: 1.02;
     letter-spacing: -0.08em;
