@@ -487,6 +487,19 @@ video {
     100% {
       background-position: -200% center;
     }
+    @media (max-width: 768px) {
+  .hero {
+    overflow: visible !important;
+  }
+
+  .hero-copy {
+    overflow: visible !important;
+  }
+
+  .hero-copy-script {
+    overflow: visible !important;
+    clip-path: none !important;
+  }
   }
 
 }
