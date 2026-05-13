@@ -258,66 +258,58 @@ main {
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: #0d0b09;
-  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
 }
 
 .intro-video-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100svh;
   overflow: hidden;
-  z-index: 1000;
-  background: #0d0b09;
+  background: transparent;
+  will-change: width, height, transform, border-radius, opacity;
+  box-shadow: 0 26px 80px rgba(35, 23, 15, 0.32);
 }
 
 .intro-video-box video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  filter: brightness(0.72) contrast(0.96) saturate(0.82);
-  transition: opacity 0.8s ease;
-}
-
-.intro-video-box video.is-ready {
-  opacity: 1;
+  filter: brightness(0.96) contrast(0.96) saturate(0.9);
 }
 
 .scroll-indicator {
   position: fixed;
   left: 50%;
-  bottom: 38px;
+  bottom: 58px;
   transform: translateX(-50%);
-  z-index: 1001;
+  z-index: 1002;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  color: rgba(246, 238, 228, 0.84);
+  gap: 12px;
+  color: rgba(246, 238, 228, 0.88);
   font-size: 9px;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
+  pointer-events: none;
 }
 
 .scroll-indicator span {
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(246, 238, 228, 0.55);
+  border: 1px solid rgba(246, 238, 228, 0.52);
   position: relative;
+  backdrop-filter: blur(4px);
 }
 
 .scroll-indicator span::after {
   content: "";
   position: absolute;
   left: 50%;
-  top: 9px;
+  top: 12px;
   width: 1px;
-  height: 13px;
-  background: rgba(246, 238, 228, 0.75);
+  height: 16px;
+  background: rgba(246, 238, 228, 0.8);
   transform: translateX(-50%);
 }
 
