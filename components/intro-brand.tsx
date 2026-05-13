@@ -1,95 +1,109 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function IntroBrand() {
+  const introRef = useRef<HTMLElement | null>(null);
   const videoBoxRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const [collapsed, setCollapsed] = useState(false);
-  const [ready, setReady] = useState(false);
+  useLayoutEffect(() => {
+    const intro = introRef.current;
+    const videoBox = videoBoxRef.current;
+    const target = document.querySelector(".hero-film") as HTMLElement | null;
 
-  const collapseIntro = () => {
-    if (collapsed || !videoBoxRef.current) return;
+    if (!intro || !videoBox || !target) return;
 
-    const target = document.querySelector(".hero-film");
-    if (!target) return;
+    const ctx = gsap.context(() => {
+      const getTargetVars = () => {
+        const rect = target.getBoundingClientRect();
 
-    const rect = target.getBoundingClientRect();
+        return {
+          width: rect.width,
+          height: rect.height,
+          x: rect.left,
+          y: rect.top,
+          borderRadius: "999px",
+        };
+      };
 
-    setCollapsed(true);
+      gsap.set(videoBox, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100svh",
+        x: 0,
+        y: 0,
+        borderRadius: 0,
+        zIndex: 1000,
+      });
 
-    gsap
-      .timeline({
-        defaults: {
-          ease: "power4.inOut",
+      gsap.set(".hero", {
+        opacity: 1,
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "+=130%",
+          scrub: 1.6,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            if (self.progress > 0.96) {
+              gsap.set(intro, {
+                opacity: 0,
+                pointerEvents: "none",
+              });
+            } else {
+              gsap.set(intro, {
+                opacity: 1,
+                pointerEvents: "none",
+              });
+            }
+          },
         },
-      })
-      .to(
+      });
+
+      tl.to(videoBox, {
+        ...getTargetVars(),
+        ease: "none",
+      });
+
+      tl.to(
         ".scroll-indicator",
         {
           opacity: 0,
-          duration: 0.45,
-          ease: "power2.out",
+          y: 18,
+          ease: "none",
         },
         0
-      )
-      .to(
-        videoBoxRef.current,
-        {
-          width: rect.width,
-          height: rect.height,
-          top: rect.top,
-          left: rect.left,
-          borderRadius: "20px",
-          duration: 2.1,
-        },
-        0.05
-      )
-      .to(
-        videoBoxRef.current,
+      );
+
+      tl.to(
+        videoBox,
         {
           opacity: 0,
-          duration: 0.35,
-          ease: "power2.out",
-          onComplete: () => {
-            videoBoxRef.current?.remove();
-          },
+          ease: "none",
         },
-        "-=0.15"
+        0.92
       );
-  };
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+      ScrollTrigger.refresh();
+    });
 
-    video.muted = true;
-    video.playsInline = true;
-    video.play().catch(() => {});
+    return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const handleWheel = () => {
-      if (!collapsed) collapseIntro();
-    };
-
-    const handleTouchMove = () => {
-      if (!collapsed) collapseIntro();
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: true });
-    window.addEventListener("touchmove", handleTouchMove, { passive: true });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, [collapsed]);
-
   return (
-    <section className={`intro ${collapsed ? "is-collapsed" : ""}`}>
+    <section ref={introRef} className="intro">
       <div ref={videoBoxRef} className="intro-video-box">
         <video
           ref={videoRef}
@@ -99,18 +113,13 @@ export default function IntroBrand() {
           loop
           playsInline
           preload="auto"
-          className={ready ? "is-ready" : ""}
-          onCanPlay={() => setReady(true)}
-          onLoadedData={() => setReady(true)}
         />
       </div>
 
-      {!collapsed && (
-        <div className="scroll-indicator">
-          <p>Entrar</p>
-          <span />
-        </div>
-      )}
+      <div className="scroll-indicator">
+        <p>Entrar</p>
+        <span />
+      </div>
     </section>
   );
 }
