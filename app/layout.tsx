@@ -1,11 +1,23 @@
+import type { Metadata } from "next";
+import { Bodoni_Moda, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import { Cormorant_Garamond } from "next/font/google";
+
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-bodoni",
+});
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-cormorant",
 });
+
+export const metadata: Metadata = {
+  title: "Amato Lima",
+  description: "Ativos imobiliários em São Paulo.",
+};
 
 export default function RootLayout({
   children,
@@ -13,8 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br" className={cormorant.variable}>
-      <body>{children}</body>
+    <html lang="pt-br">
+      <body className={`${bodoni.variable} ${cormorant.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
