@@ -51,8 +51,8 @@ export default function IntroBrand() {
         scrollTrigger: {
           trigger: ".hero",
           start: "top top",
-          end: "+=130%",
-          scrub: 1.6,
+          end: "+=260%",
+          scrub: 3.2,
           pin: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
@@ -91,9 +91,10 @@ export default function IntroBrand() {
         videoBox,
         {
           opacity: 0,
-          ease: "none",
+          ease: "power2.out",
+          duration: 0.8,
         },
-        0.92
+        0.97
       );
 
       ScrollTrigger.refresh();
