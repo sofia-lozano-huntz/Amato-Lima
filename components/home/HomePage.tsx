@@ -1,3 +1,4 @@
+import IntroBrand from "../intro-brand";
 import HeroSection from "./HeroSection";
 import BlueprintSection from "./BlueprintSection";
 import MonogramSection from "./MonogramSection";
@@ -9,21 +10,14 @@ import FooterSection from "./FooterSection";
 export default function HomePage() {
   return (
     <main>
-
+      <IntroBrand />
       <HeroSection />
-
       <BlueprintSection />
-
       <MonogramSection />
-
       <NumbersSection />
-
       <ProjectsSection />
-
       <SaoPauloSection />
-
       <FooterSection />
-
     </main>
   );
 }
