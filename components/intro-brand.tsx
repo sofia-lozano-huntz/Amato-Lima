@@ -29,15 +29,18 @@ export default function IntroBrand() {
       });
 
       const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".intro-space",
-          start: "top top",
-          end: "+=260%",
-          scrub: 1.2,
-          pin: true,
-          anticipatePin: 1,
-        },
-      });
+  scrollTrigger: {
+    trigger: ".intro-space",
+    start: "top top",
+    end: "+=520%",
+    scrub: 1.2,
+    pin: true,
+    pinSpacing: true,
+    anticipatePin: 1,
+    fastScrollEnd: true,
+    invalidateOnRefresh: true,
+  },
+});
 
       tl.to(
         videoWrap,
