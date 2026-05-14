@@ -323,7 +323,7 @@ main {
   overflow: hidden;
   background: transparent;
   will-change: width, height, transform, border-radius, opacity;
-  box-shadow: 0 26px 80px rgba(35, 23, 15, 0.22);
+  box-shadow: 0 26px 80px rgba(35, 23, 15, 0.18);
 }
 
 .intro-video-box video {
@@ -333,18 +333,25 @@ main {
   filter: brightness(0.98) contrast(0.96) saturate(0.9);
 }
 
+.intro-logo {
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: transform, width, opacity;
+}
+
 .scroll-indicator {
   position: fixed;
   left: 50%;
-  bottom: 58px;
+  bottom: 34px;
   transform: translateX(-50%);
   z-index: 1002;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  color: rgba(246, 238, 228, 0.88);
-  font-size: 9px;
+  gap: 7px;
+  color: rgba(246, 238, 228, 0.72);
+  font-size: 8px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   pointer-events: none;
@@ -352,21 +359,15 @@ main {
 
 .scroll-indicator span {
   width: 1px;
-  height: 86px;
-  background: rgba(246, 238, 228, 0.62);
-  position: relative;
+  height: 24px;
+  background: rgba(246, 238, 228, 0.42);
 }
 
-.scroll-indicator span::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -13px;
-  width: 9px;
-  height: 9px;
+.scroll-indicator i {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  border: 1px solid rgba(246, 238, 228, 0.7);
-  transform: translateX(-50%);
+  border: 1px solid rgba(246, 238, 228, 0.5);
 }
 
 /* PLANTA */
