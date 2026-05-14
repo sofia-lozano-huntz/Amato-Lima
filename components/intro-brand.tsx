@@ -51,7 +51,7 @@ export default function IntroBrand() {
       tl.to(
         video,
         {
-          scale: 0.42,
+          scale: 0.68,
           ease: "none",
         },
         0
