@@ -48,10 +48,6 @@ main {
   z-index: 1;
 }
 
-.hero-wash {
-  display: none;
-}
-
 .hero-header {
   position: absolute;
   top: 0;
@@ -69,12 +65,11 @@ main {
   font-size: 8px;
   letter-spacing: 0.44em;
   text-transform: uppercase;
-  color: rgba(78, 61, 45, 0.56);
+  color: rgba(68, 52, 38, 0.58);
 }
 
 .hero-logo {
   width: 138px;
-  opacity: 0.96;
 }
 
 .hero-menu {
@@ -91,7 +86,7 @@ main {
   position: absolute;
   right: 0;
   height: 1px;
-  background: rgba(78, 61, 45, 0.62);
+  background: rgba(68, 52, 38, 0.66);
 }
 
 .hero-menu span:first-child {
@@ -106,10 +101,10 @@ main {
 
 .hero-title-back {
   position: absolute;
-  top: 25vh;
+  top: 27vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 120vw;
+  width: 112vw;
   z-index: 4;
   text-align: center;
   pointer-events: none;
@@ -117,53 +112,53 @@ main {
 
 .hero-title-back span {
   font-family: var(--font-bodoni), "Times New Roman", serif;
-  font-size: clamp(5.4rem, 21vw, 9rem);
+  font-size: clamp(4.8rem, 18vw, 8rem);
   line-height: 0.85;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(78, 61, 45, 0.5);
+  color: rgba(65, 50, 36, 0.52);
 }
 
 .hero-video-frame {
   position: absolute;
-  top: 37vh;
+  top: 38vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 70vw;
-  height: 30vh;
+  width: 66vw;
+  height: 28vh;
   z-index: 5;
-  border: 1px solid rgba(80, 63, 45, 0.16);
+  border: 1px solid rgba(72, 56, 40, 0.16);
   background: transparent;
   pointer-events: none;
 }
 
 .hero-video {
   position: absolute;
-  top: 40vh;
+  top: 42vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 54vw;
-  height: 20vh;
+  width: 50vw;
+  height: 18vh;
   z-index: 6;
   overflow: hidden;
   border-radius: 0;
-  box-shadow: 0 18px 44px rgba(45, 31, 21, 0.12);
+  box-shadow: none;
 }
 
 .hero-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.98) contrast(0.96) saturate(0.9);
+  filter: brightness(0.98) contrast(0.97) saturate(0.9);
 }
 
 .hero-title-front {
   position: absolute;
-  top: 49vh;
+  top: 53vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 120vw;
+  width: 118vw;
   z-index: 7;
   text-align: center;
   pointer-events: none;
@@ -171,12 +166,12 @@ main {
 
 .hero-title-front span {
   font-family: var(--font-cormorant), "Times New Roman", serif;
-  font-size: clamp(2.4rem, 8.6vw, 4.4rem);
+  font-size: clamp(2.15rem, 7.8vw, 4rem);
   line-height: 0.9;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   font-weight: 400;
-  color: rgba(72, 57, 42, 0.58);
+  color: rgba(62, 49, 36, 0.5);
 }
 
 .hero-enter {
@@ -189,7 +184,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 7px;
-  color: rgba(78, 61, 45, 0.5);
+  color: rgba(68, 52, 38, 0.5);
   font-size: 8px;
   letter-spacing: 0.34em;
   text-transform: uppercase;
@@ -201,16 +196,99 @@ main {
 
 .hero-enter span {
   width: 1px;
-  height: 24px;
-  background: rgba(78, 61, 45, 0.32);
+  height: 22px;
+  background: rgba(68, 52, 38, 0.32);
 }
 
 .hero-enter i {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  border: 1px solid rgba(78, 61, 45, 0.42);
+  border: 1px solid rgba(68, 52, 38, 0.42);
 }
+
+/* INTRO */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: transparent;
+  pointer-events: none;
+}
+
+.intro-video {
+  overflow: hidden;
+  background: #0e0c09;
+  will-change: width, height, left, top, opacity;
+}
+
+.intro-video::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 420px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(18, 13, 9, 0.34) 0%,
+    rgba(18, 13, 9, 0.18) 42%,
+    rgba(18, 13, 9, 0.04) 68%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.intro-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.98) contrast(0.98) saturate(0.92);
+}
+
+.intro-logo {
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: left, top, width, opacity;
+}
+
+.scroll-indicator {
+  position: fixed;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: rgba(246, 238, 228, 0.72);
+  font-size: 8px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.scroll-indicator p {
+  margin: 0;
+}
+
+.scroll-indicator span {
+  width: 1px;
+  height: 22px;
+  background: rgba(246, 238, 228, 0.42);
+}
+
+.scroll-indicator i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(246, 238, 228, 0.5);
+                   }
 
 /* INTRO */
 
