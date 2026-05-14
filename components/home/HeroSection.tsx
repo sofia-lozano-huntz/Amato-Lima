@@ -1,44 +1,20 @@
 export default function HeroSection() {
   return (
-    <section className="hero">
-      <div className="hero-bg" />
-      <div className="hero-wash" />
-
+    <section className="hero home-reveal">
       <header className="hero-header">
-        <span className="hero-location">São Paulo</span>
+        <span>São Paulo</span>
 
-        <img
-          src="/logo.png"
-          alt="Amato Lima"
-          className="hero-logo hero-logo-target"
-        />
+        <img src="/logo.png" alt="Amato Lima" className="hero-logo" />
 
-        <button className="hero-menu" aria-label="Abrir menu">
+        <button className="hero-menu" aria-label="Menu">
           <span />
           <span />
         </button>
       </header>
 
-      <div className="hero-title-back">
-        <span>A Arte</span>
-      </div>
-
-      <div className="hero-video-frame" />
-
-      <div className="hero-video hero-film">
-        <video autoPlay muted loop playsInline preload="auto">
-          <source src="/intro.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div className="hero-title-front">
-        <span>De Habitar</span>
-      </div>
-
-      <div className="hero-enter">
-        <p>Entrar</p>
-        <span />
-        <i />
+      <div className="hero-copy">
+        <h1>A Arte</h1>
+        <p>De Habitar</p>
       </div>
     </section>
   );
