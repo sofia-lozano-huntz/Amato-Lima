@@ -20,8 +20,8 @@ export default function IntroBrand() {
 
     const ctx = gsap.context(() => {
       gsap.set(".home-reveal", {
-        opacity: 0,
-        y: 120,
+        opacity: 1,
+        y: 0,
       });
 
       gsap.set(video, {
@@ -88,17 +88,8 @@ export default function IntroBrand() {
           ease: "power2.out",
         },
         0.34
-      );
-
-      tl.to(
-        intro,
-        {
-          opacity: 0,
-          ease: "none",
-        },
-        0.94
-      );
-    });
+        );
+      });
 
     return () => ctx.revert();
   }, []);
