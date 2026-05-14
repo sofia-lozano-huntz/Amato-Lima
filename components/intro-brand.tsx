@@ -24,30 +24,41 @@ export default function IntroBrand() {
         y: 40,
       });
 
-      gsap.set(".intro-logo", {
-        opacity: 1,
+      gsap.set(videoWrap, {
+        width: "100vw",
+        height: "100svh",
+        top: 0,
+        left: "50%",
+        xPercent: -50,
+      });
+
+      gsap.set(logo, {
+        top: "50%",
+        left: "50%",
+        xPercent: -50,
+        yPercent: -50,
+        width: 210,
       });
 
       const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".intro-space",
-    start: "top top",
-    end: "+=520%",
-    scrub: 1.2,
-    pin: true,
-    pinSpacing: true,
-    anticipatePin: 1,
-    fastScrollEnd: true,
-    invalidateOnRefresh: true,
-  },
-});
+        scrollTrigger: {
+          trigger: intro,
+          start: "top top",
+          end: "+=650%",
+          scrub: 1.2,
+          pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
 
       tl.to(
         videoWrap,
         {
-          width: "34vw",
-          height: "42vh",
-          top: "34vh",
+          width: "42vw",
+          height: "48vh",
+          top: "30vh",
           left: "50%",
           xPercent: -50,
           ease: "none",
@@ -59,7 +70,7 @@ export default function IntroBrand() {
         logo,
         {
           top: "9vh",
-          width: "140px",
+          width: 140,
           ease: "none",
         },
         0
@@ -72,7 +83,7 @@ export default function IntroBrand() {
           y: 0,
           ease: "none",
         },
-        0.42
+        0.55
       );
 
       tl.to(
@@ -81,7 +92,7 @@ export default function IntroBrand() {
           opacity: 0,
           ease: "none",
         },
-        0.92
+        0.95
       );
     });
 
@@ -89,21 +100,17 @@ export default function IntroBrand() {
   }, []);
 
   return (
-    <>
-      <section ref={introRef} className="intro-layer">
-        <div ref={videoWrapRef} className="intro-video-wrap">
-          <video src="/intro.mp4" autoPlay muted loop playsInline preload="auto" />
-        </div>
+    <section ref={introRef} className="intro-layer">
+      <div ref={videoWrapRef} className="intro-video-wrap">
+        <video src="/intro.mp4" autoPlay muted loop playsInline preload="auto" />
+      </div>
 
-        <img
-          ref={logoRef}
-          src="/logo.png"
-          alt="Amato Lima"
-          className="intro-logo"
-        />
-      </section>
-
-      <section className="intro-space" />
-    </>
+      <img
+        ref={logoRef}
+        src="/logo.png"
+        alt="Amato Lima"
+        className="intro-logo"
+      />
+    </section>
   );
 }
