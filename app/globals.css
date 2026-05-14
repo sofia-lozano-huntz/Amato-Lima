@@ -248,3 +248,38 @@ main {
   text-transform: uppercase;
   color: rgba(79, 64, 50, 0.62);
 }
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .hero-header {
+    top: 28px;
+    padding: 0 24px;
+  }
+
+  .hero-floating-logo {
+    width: 160px;
+  }
+
+  .hero-content {
+    padding-top: 27vh;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(5.2rem, 25vw, 7.8rem);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-content p {
+    margin-top: 20px;
+    font-size: 1.35rem;
+    letter-spacing: 0.34em;
+  }
+
+  .hero-card-placeholder {
+    width: 78vw;
+    aspect-ratio: 2.35 / 1;
+    border-radius: 28px;
+    margin-top: 58px;
+  }
+}
