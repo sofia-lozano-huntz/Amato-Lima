@@ -90,7 +90,7 @@ export default function IntroBrand() {
           trigger: ".hero",
           start: "top top",
           end: "+=520%",
-          scrub: 4.8,
+          scrub: 1.2,
           pin: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
