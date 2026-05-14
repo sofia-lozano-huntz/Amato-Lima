@@ -8,15 +8,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function IntroBrand() {
   const introRef = useRef<HTMLElement | null>(null);
-  const videoWrapRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLDivElement | null>(null);
   const logoRef = useRef<HTMLImageElement | null>(null);
 
   useLayoutEffect(() => {
     const intro = introRef.current;
-    const videoWrap = videoWrapRef.current;
+    const video = videoRef.current;
     const logo = logoRef.current;
 
-    if (!intro || !videoWrap || !logo) return;
+    if (!intro || !video || !logo) return;
 
     const ctx = gsap.context(() => {
       gsap.set(".home-reveal", {
@@ -24,20 +24,15 @@ export default function IntroBrand() {
         y: 40,
       });
 
-      gsap.set(videoWrap, {
-        width: "100vw",
-        height: "100svh",
-        top: 0,
-        left: "50%",
-        xPercent: -50,
+      gsap.set(video, {
+        scale: 1,
+        transformOrigin: "center center",
       });
 
       gsap.set(logo, {
-        top: "50%",
-        left: "50%",
-        xPercent: -50,
-        yPercent: -50,
-        width: 210,
+        scale: 1,
+        y: 0,
+        transformOrigin: "center center",
       });
 
       const tl = gsap.timeline({
@@ -54,13 +49,9 @@ export default function IntroBrand() {
       });
 
       tl.to(
-        videoWrap,
+        video,
         {
-          width: "42vw",
-          height: "48vh",
-          top: "30vh",
-          left: "50%",
-          xPercent: -50,
+          scale: 0.42,
           ease: "none",
         },
         0
@@ -69,8 +60,8 @@ export default function IntroBrand() {
       tl.to(
         logo,
         {
-          top: "9vh",
-          width: 140,
+          y: "-41vh",
+          scale: 0.68,
           ease: "none",
         },
         0
@@ -83,7 +74,7 @@ export default function IntroBrand() {
           y: 0,
           ease: "none",
         },
-        0.55
+        0.52
       );
 
       tl.to(
@@ -92,7 +83,7 @@ export default function IntroBrand() {
           opacity: 0,
           ease: "none",
         },
-        0.95
+        0.94
       );
     });
 
@@ -101,7 +92,7 @@ export default function IntroBrand() {
 
   return (
     <section ref={introRef} className="intro-layer">
-      <div ref={videoWrapRef} className="intro-video-wrap">
+      <div ref={videoRef} className="intro-video-wrap">
         <video src="/intro.mp4" autoPlay muted loop playsInline preload="auto" />
       </div>
 
