@@ -1,131 +1,76 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function HeroSection() {
-  const heroRef = useRef<HTMLElement | null>(null);
-  const videoWrapRef = useRef<HTMLDivElement | null>(null);
-  const introLogoRef = useRef<HTMLImageElement | null>(null);
-  const headerLogoRef = useRef<HTMLImageElement | null>(null);
-
-  useLayoutEffect(() => {
-    const hero = heroRef.current;
-    const video = videoWrapRef.current;
-    const introLogo = introLogoRef.current;
-    const headerLogo = headerLogoRef.current;
-
-    if (!hero || !video || !introLogo || !headerLogo) return;
-
-    const ctx = gsap.context(() => {
-      gsap.set(headerLogo, { opacity: 0 });
-
-      const isMobile = window.innerWidth <= 768;
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "+=180%",
-          scrub: 1.1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      tl.to(
-        video,
-        {
-          width: isMobile ? "78vw" : "64vw",
-          height: isMobile ? "32vw" : "25.6vw",
-          top: isMobile ? "72%" : "74%",
-          left: "50%",
-          xPercent: -50,
-          yPercent: -50,
-          borderRadius: isMobile ? "28px" : "36px",
-          boxShadow: "0 28px 90px rgba(0,0,0,0.35)",
-          ease: "none",
-        },
-        0
-      );
-
-      tl.to(
-        introLogo,
-        {
-          top: isMobile ? "86px" : "58px",
-          width: isMobile ? "112px" : "128px",
-          opacity: 1,
-          ease: "none",
-        },
-        0
-      );
-
-      tl.to(headerLogo, { opacity: 1, ease: "none" }, 0.92);
-      tl.to(introLogo, { opacity: 0, ease: "none" }, 0.92);
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={heroRef} className="hero">
-      <div className="hero-bg">
-        <img src="/wood.jpg" alt="" aria-hidden="true" />
-      </div>
-
-      <div ref={videoWrapRef} className="hero-video-frame">
-        <video src="/intro.mp4" autoPlay muted loop playsInline preload="auto" />
-      </div>
-
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#1b1712] text-[#efe7d8]">
+      {/* Background */}
       <img
-        ref={introLogoRef}
-        src="/logo.png"
-        alt="Amato Lima"
-        className="hero-floating-logo"
+        src="/wood.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-80"
       />
 
-      <header className="hero-header">
-        <button className="hero-menu" aria-label="Menu">
-          <span />
-          <span />
-          <small>Menu</small>
-        </button>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-[#6b5436]/20 mix-blend-multiply" />
 
-        <img
-          ref={headerLogoRef}
-          src="/logo.png"
-          alt="Amato Lima"
-          className="hero-logo"
-        />
+      {/* Linha central */}
+      <div className="absolute left-1/2 top-0 z-10 h-full w-px bg-[#efe7d8]/20" />
 
-        <a href="#contato" className="hero-contact">
-          Contato
-        </a>
+      {/* Header */}
+      <header className="absolute left-0 top-0 z-20 flex w-full items-start justify-between px-10 py-8 text-[10px] uppercase tracking-[0.35em] text-[#efe7d8]/80">
+        <div className="flex items-center gap-4">
+          <span className="text-xl leading-none">☰</span>
+          <span>Menu</span>
+        </div>
+
+        <div className="absolute left-1/2 top-8 -translate-x-1/2 text-center">
+          <img
+            src="/logo.png"
+            alt="Amato Lima"
+            className="mx-auto mb-2 h-16 w-auto object-contain"
+          />
+        </div>
+
+        <div>Contato</div>
       </header>
 
-      <div className="hero-line" />
+      {/* Conteúdo */}
+      <div className="relative z-20 flex min-h-screen flex-col items-center justify-center px-6 pt-24 text-center">
+        <h1 className="font-serif text-[22vw] font-light leading-[0.75] tracking-[0.08em] text-[#efe7d8]/90 md:text-[14vw]">
+          ARTE
+        </h1>
 
-      <div className="hero-content">
-        <h1>Arte</h1>
-        <p>De Habitar</p>
+        <p className="mt-8 text-[18px] uppercase tracking-[1.1em] text-[#efe7d8]/75 md:text-[24px]">
+          De Habitar
+        </p>
 
-        <span className="hero-cross">+</span>
+        <div className="my-8 text-[#efe7d8]/60">＋</div>
 
-        <small>
+        <p className="mb-12 text-[10px] uppercase leading-loose tracking-[0.55em] text-[#efe7d8]/70">
           Ativos exclusivos.
           <br />
           Legado que permanece.
-        </small>
+        </p>
 
-        <div className="hero-card-placeholder" />
+        {/* Frame do vídeo */}
+        <div className="relative h-[190px] w-full max-w-[720px] overflow-hidden rounded-[28px] border border-[#efe7d8]/35 shadow-2xl md:h-[260px]">
+          <video
+            src="/intro.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover"
+          />
+        </div>
 
-        <a href="#sobre" className="hero-explore">
+        <div className="mt-12 text-[10px] uppercase tracking-[0.55em] text-[#efe7d8]/65">
           Explorar
-        </a>
+        </div>
+
+        <div className="mt-6 h-12 w-px bg-[#efe7d8]/35" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#efe7d8]/80" />
       </div>
     </section>
   );
