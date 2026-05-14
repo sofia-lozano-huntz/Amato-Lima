@@ -222,16 +222,26 @@ main {
 }
 
 .hero-content p {
-  margin-top: 34px;
-  font-family: "Switzerland", Arial, sans-serif;
-  font-size: clamp(1.2rem, 4vw, 2.8rem);
-  letter-spacing: 0.62em;
+  margin-top: 18px;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.1rem, 3.5vw, 2.4rem);
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  letter-spacing: 0.42em;
+
   text-transform: uppercase;
-  color: #e7d8c5;
-  opacity: 0.98;
+
+  color: rgba(245, 235, 224, 0.88);
+
   text-shadow:
-    0 0 12px rgba(255,255,255,0.12),
-    0 2px 12px rgba(0,0,0,0.22);
+    0 2px 10px rgba(0,0,0,0.18);
+
+  opacity: 1;
 }
 
 .hero-cross {
