@@ -30,6 +30,11 @@ export default function HeroSection() {
         </span>
       </div>
 
+      <div className="hero-video-lines">
+  <span />
+  <span />
+</div>
+
       <div className="hero-video-frame" />
 
       <div className="hero-video hero-film">
