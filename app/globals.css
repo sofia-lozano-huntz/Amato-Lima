@@ -1,285 +1,110 @@
-@font-face {
-  font-family: "Switzerland";
-  src: url("/font/Switzerland.ttf") format("truetype");
+@import "tailwindcss";
+
+:root {
+  --background: #15120f;
+  --foreground: #efe7d8;
+
+  --bege: #efe7d8;
+  --bege-soft: #d9ccb6;
+  --dark: #15120f;
+  --brown: #2a2119;
 }
 
-@font-face {
-  font-family: "Agatho";
-  src: url("/font/Agatho-LightCAPS.otf") format("opentype");
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
-  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
   overflow-x: hidden;
-  background: #e8dfd0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Seleção elegante */
+::selection {
+  background: rgba(239, 231, 216, 0.2);
+  color: var(--bege);
+}
+
+/* Scrollbar minimalista */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #15120f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(239, 231, 216, 0.25);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(239, 231, 216, 0.4);
+}
+
+/* Remove highlight azul horroroso do mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Vídeos e imagens */
 img,
 video {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
-main {
-  background: #e8dfd0;
+/* Classe para serif elegante */
+.font-serif-luxury {
+  font-family:
+    "Cormorant Garamond",
+    "Bodoni Moda",
+    "Times New Roman",
+    serif;
 }
 
-/* INTRO */
+/* Glow cinematográfico leve */
+.soft-glow {
+  box-shadow:
+    0 0 120px rgba(239, 231, 216, 0.04),
+    0 0 40px rgba(239, 231, 216, 0.03);
+}
 
-/* HERO */
+/* Blur glass ultra sutil */
+.glass-luxury {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
 
-.hero {
+/* Grain cinematográfico */
+.grain {
   position: relative;
-  height: 100svh;
-  overflow: hidden;
-  background: #18110d;
-  color: #efe7dc;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.72) contrast(1.06) saturate(0.82);
-  transform: scale(1.08);
-}
-
-.hero-video-frame {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0;
-  will-change: width, height, top, left, border-radius;
-}
-
-.hero-video-frame video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.82) contrast(1.05) saturate(0.86);
-}
-
-.hero-video-frame::after {
+.grain::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(20, 12, 8, 0.18);
+  opacity: 0.08;
   pointer-events: none;
-}
-
-.hero-floating-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 210px;
-  transform: translate(-50%, -50%);
-  z-index: 7;
-  pointer-events: none;
-}
-
-.hero-header {
-  position: absolute;
-  top: 42px;
-  left: 0;
-  width: 100%;
-  padding: 0 54px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: start;
-  z-index: 8;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  height: 100svh;
-  padding-top: 21vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-family: var(--font-bodoni), "Times New Roman", serif;
-  font-size: clamp(7rem, 24vw, 21rem);
-  line-height: 0.78;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #f4eadf;
-  opacity: 0.96;
-}
-
-.hero-content p {
-  margin-top: 26px;
-  font-family: var(--font-cormorant), serif;
-  font-size: clamp(1.25rem, 4vw, 2.8rem);
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.48em;
-  text-transform: uppercase;
-  color: rgba(245, 235, 224, 0.9);
-}
-
-.hero-card-placeholder {
-  margin-top: 64px;
-  width: min(64vw, 860px);
-  aspect-ratio: 2.5 / 1;
-  border-radius: 36px;
-  pointer-events: none;
-}
-
-/* PROJETOS */
-
-.projects-section {
-  position: relative;
-  z-index: 4;
-  background: #e8dfd0;
-}
-
-.project-card {
-  position: relative;
-  height: 48vh;
-  overflow: hidden;
-}
-
-.project-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-card span {
-  position: absolute;
-  right: 22px;
-  bottom: 20px;
-  font-family: "Agatho", serif;
-  font-size: 1rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: #f6eee4;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
-}
-
-/* SÃO PAULO */
-
-.saopaulo-section {
-  position: relative;
-  z-index: 4;
-  min-height: 58vh;
-  overflow: hidden;
-  background: #d1b98f;
-}
-
-.saopaulo-video {
-  width: 100%;
-  height: 58vh;
-  object-fit: cover;
-  filter: brightness(0.76) contrast(1.02) saturate(0.82);
-}
-
-.saopaulo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to left,
-    rgba(209, 185, 143, 0.92) 0%,
-    rgba(209, 185, 143, 0.7) 38%,
-    rgba(209, 185, 143, 0) 70%
-  );
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 40px 26px;
-}
-
-.saopaulo-overlay p {
-  width: 46%;
-  font-family: "Agatho", serif;
-  font-size: 0.78rem;
-  line-height: 1.8;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #f6eee4;
-}
-
-/* FOOTER */
-
-.footer {
-  position: relative;
-  z-index: 4;
-  background: #e8dfd0;
-  padding: 70px 24px 90px;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.footer-logo {
-  width: 180px;
-}
-
-.footer p {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(79, 64, 50, 0.62);
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-  .hero-header {
-    top: 28px;
-    padding: 0 24px;
-  }
-
-  .hero-floating-logo {
-    width: 160px;
-  }
-
-  .hero-content {
-    padding-top: 27vh;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(5.2rem, 25vw, 7.8rem);
-    letter-spacing: 0.05em;
-  }
-
-  .hero-content p {
-    margin-top: 20px;
-    font-size: 1.35rem;
-    letter-spacing: 0.34em;
-  }
-
-  .hero-card-placeholder {
-    width: 78vw;
-    aspect-ratio: 2.35 / 1;
-    border-radius: 28px;
-    margin-top: 58px;
-  }
+  mix-blend-mode: soft-light;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
 }
