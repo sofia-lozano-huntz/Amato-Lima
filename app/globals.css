@@ -32,38 +32,24 @@ main {
   background: #e8dfd0;
 }
 
-.intro-video::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 460px;
-  height: 260px;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(14, 10, 7, 0.42) 0%,
-    rgba(14, 10, 7, 0.26) 38%,
-    rgba(14, 10, 7, 0.08) 64%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
 /* INTRO SIMPLES ESTILO POEZA */
 
 .intro-layer {
   position: fixed;
   inset: 0;
   z-index: 999;
+  background: #f6f3ed;
   pointer-events: none;
-  background: transparent;
 }
 
 .intro-video-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
   overflow: hidden;
-  background: transparent;
+  z-index: 1;
 }
 
 .intro-video-wrap::after {
@@ -72,8 +58,8 @@ main {
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(20, 14, 10, 0.16),
-    rgba(20, 14, 10, 0.04) 52%,
+    rgba(0, 0, 0, 0.16),
+    rgba(0, 0, 0, 0.02) 55%,
     transparent 100%
   );
   pointer-events: none;
@@ -87,9 +73,12 @@ main {
 }
 
 .intro-logo {
-  height: auto;
-  object-fit: contain;
-  pointer-events: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 210px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .intro-space {
@@ -106,31 +95,81 @@ main {
   background: url("/wood.jpg") center / cover no-repeat;
 }
 
+.hero-header {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 100%;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  z-index: 5;
+}
+
+.hero-header span {
+  margin-top: 8px;
+  font-size: 8px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(70, 55, 40, 0.55);
+}
+
+.hero-logo {
+  width: 138px;
+}
+
+.hero-menu {
+  justify-self: end;
+  width: 32px;
+  height: 16px;
+  margin-top: 8px;
+  border: none;
+  background: transparent;
+  position: relative;
+}
+
+.hero-menu span {
+  position: absolute;
+  right: 0;
+  height: 1px;
+  background: rgba(70, 55, 40, 0.7);
+}
+
+.hero-menu span:first-child {
+  top: 1px;
+  width: 32px;
+}
+
+.hero-menu span:last-child {
+  bottom: 1px;
+  width: 24px;
+}
+
 .hero-copy {
   position: absolute;
-  top: 31vh;
+  top: 36vh;
   left: 50%;
-  width: 120vw;
+  width: 110vw;
   transform: translateX(-50%);
   text-align: center;
-  z-index: 5;
-  pointer-events: none;
+  z-index: 3;
 }
 
 .hero-copy h1 {
   font-family: var(--font-bodoni), "Times New Roman", serif;
-  font-size: clamp(5.2rem, 20vw, 8.4rem);
+  font-size: clamp(5rem, 19vw, 8rem);
   line-height: 0.85;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(65, 50, 36, 0.54);
+  color: rgba(65, 50, 36, 0.55);
   font-weight: 500;
 }
 
 .hero-copy p {
-  margin-top: 18vh;
+  margin-top: 18px;
   font-family: var(--font-cormorant), "Times New Roman", serif;
-  font-size: clamp(2.1rem, 7.8vw, 4rem);
+  font-size: clamp(2.2rem, 8vw, 4rem);
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: rgba(65, 50, 36, 0.46);
