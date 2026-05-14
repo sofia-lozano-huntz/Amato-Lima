@@ -136,6 +136,32 @@ main {
     background-position: 0% 50%;
   }
 }
+.hero-video-lines {
+  position: absolute;
+  top: 72.2vh;
+  left: 50%;
+  width: 92vw;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.hero-video-lines span {
+  width: 22vw;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(98, 77, 55, 0.5),
+    rgba(185, 161, 122, 0.5)
+  );
+}
+
+.hero-video-lines span:last-child {
+  transform: scaleX(-1);
+}
 
 .hero-video-frame {
   position: absolute;
