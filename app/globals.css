@@ -1,0 +1,116 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  overflow-x:hidden;
+}
+
+.hero{
+  position:relative;
+  min-height:100vh;
+  color:#f3ece4;
+  font-family: serif;
+}
+
+.background{
+  position:absolute;
+  inset:0;
+
+  background-image:url('/wood.png');
+  background-size:cover;
+  background-position:center;
+
+  z-index:0;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,.25);
+
+  z-index:1;
+}
+
+.header{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:40px 60px;
+}
+
+.header button{
+  background:none;
+  border:none;
+  color:#ddd;
+  letter-spacing:4px;
+  font-size:12px;
+  cursor:pointer;
+}
+
+.content{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  text-align:center;
+
+  padding-top:80px;
+}
+
+.content h1{
+  font-size:clamp(90px, 18vw, 320px);
+  font-weight:300;
+  letter-spacing:10px;
+}
+
+.content h2{
+  margin-top:-20px;
+
+  font-size:20px;
+  letter-spacing:14px;
+  font-weight:300;
+}
+
+.content p{
+  margin-top:60px;
+
+  font-size:12px;
+  letter-spacing:5px;
+  line-height:2;
+}
+
+.videoCard{
+  width:min(900px, 80vw);
+  margin-top:60px;
+
+  border-radius:36px;
+  overflow:hidden;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.videoCard video{
+  width:100%;
+  display:block;
+}
+
+.explorar{
+  margin-top:40px;
+
+  font-size:12px;
+  letter-spacing:8px;
+}
