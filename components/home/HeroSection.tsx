@@ -2,10 +2,10 @@ export default function HeroSection() {
   return (
     <section className="hero">
       <div className="hero-bg" />
-      <div className="hero-soft-reveal" />
+      <div className="hero-wash" />
 
       <header className="hero-header">
-        <span className="hero-location metallic-text">São Paulo</span>
+        <span className="hero-location">São Paulo</span>
 
         <img
           src="/logo.png"
@@ -19,8 +19,8 @@ export default function HeroSection() {
         </button>
       </header>
 
-      <div className="hero-copy">
-        <span className="hero-script metallic-text">Arte</span>
+      <div className="hero-title-back">
+        <span>A Arte</span>
       </div>
 
       <div className="hero-video-frame" />
@@ -31,8 +31,8 @@ export default function HeroSection() {
         </video>
       </div>
 
-      <div className="hero-title-wrap">
-        <span className="hero-title metallic-text">De Habitar</span>
+      <div className="hero-title-front">
+        <span>De Habitar</span>
       </div>
 
       <div className="hero-enter">
