@@ -8,22 +8,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function IntroBrand() {
   const introRef = useRef<HTMLElement | null>(null);
-  const videoBoxRef = useRef<HTMLDivElement | null>(null);
-  const introLogoRef = useRef<HTMLImageElement | null>(null);
+  const videoRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLImageElement | null>(null);
 
   useLayoutEffect(() => {
     const intro = introRef.current;
-    const videoBox = videoBoxRef.current;
-    const introLogo = introLogoRef.current;
+    const introVideo = videoRef.current;
+    const introLogo = logoRef.current;
 
-    const targetVideo = document.querySelector(".hero-film") as HTMLElement | null;
-    const targetLogo = document.querySelector(".hero-logo-target") as HTMLElement | null;
+    const heroVideo = document.querySelector(".hero-film") as HTMLElement | null;
+    const heroLogo = document.querySelector(".hero-logo-target") as HTMLElement | null;
 
-    if (!intro || !videoBox || !introLogo || !targetVideo || !targetLogo) return;
+    if (!intro || !introVideo || !introLogo || !heroVideo || !heroLogo) return;
 
     const ctx = gsap.context(() => {
       const getVideoTarget = () => {
-        const rect = targetVideo.getBoundingClientRect();
+        const rect = heroVideo.getBoundingClientRect();
 
         return {
           width: rect.width,
@@ -34,7 +34,7 @@ export default function IntroBrand() {
       };
 
       const getLogoTarget = () => {
-        const rect = targetLogo.getBoundingClientRect();
+        const rect = heroLogo.getBoundingClientRect();
 
         return {
           width: rect.width,
@@ -43,14 +43,14 @@ export default function IntroBrand() {
         };
       };
 
-      gsap.set(videoBox, {
+      gsap.set(introVideo, {
         position: "fixed",
         left: 0,
         top: 0,
         width: "100vw",
         height: "100svh",
-        borderRadius: 0,
         zIndex: 1000,
+        borderRadius: 0,
       });
 
       gsap.set(introLogo, {
@@ -64,46 +64,42 @@ export default function IntroBrand() {
         opacity: 0.96,
       });
 
-      gsap.set(".hero-logo-target", {
+      gsap.set(".hero-header", { opacity: 0 });
+      gsap.set(".hero-logo-target", { opacity: 0 });
+
+      gsap.set([".hero-title-back", ".hero-title-front"], {
+        opacity: 0,
+        y: 22,
+      });
+
+      gsap.set([".hero-video-frame", ".hero-enter"], {
         opacity: 0,
       });
 
-      gsap.set(
-        [
-          ".hero-header",
-          ".hero-script",
-          ".hero-title",
-          ".hero-video-frame",
-          ".hero-enter",
-          ".hero-soft-reveal",
-          ".hero-video",
-        ],
-        {
-          opacity: 0,
-          filter: "blur(18px)",
-        }
-      );
-
       gsap.set(".hero-bg", {
-        opacity: 0.12,
-        scale: 1.06,
+        opacity: 0,
+        scale: 1.04,
+      });
+
+      gsap.set(".hero-wash", {
+        opacity: 0,
       });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".hero",
           start: "top top",
-          end: "+=620%",
-          scrub: 5.8,
+          end: "+=520%",
+          scrub: 4.8,
           pin: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             if (self.progress > 0.985) {
-              gsap.set(intro, { opacity: 0, pointerEvents: "none" });
-              gsap.set(".hero-logo-target", { opacity: 0.94 });
+              gsap.set(intro, { opacity: 0 });
+              gsap.set(".hero-logo-target", { opacity: 1 });
             } else {
-              gsap.set(intro, { opacity: 1, pointerEvents: "none" });
+              gsap.set(intro, { opacity: 1 });
               gsap.set(".hero-logo-target", { opacity: 0 });
             }
           },
@@ -111,13 +107,13 @@ export default function IntroBrand() {
       });
 
       tl.to(
-        videoBox,
+        introVideo,
         {
-          width: "72vw",
-          height: "42vh",
-          left: "14vw",
-          top: "30vh",
-          borderRadius: "2px",
+          width: "62vw",
+          height: "34vh",
+          left: "19vw",
+          top: "37vh",
+          borderRadius: 0,
           ease: "power3.inOut",
         },
         0
@@ -127,30 +123,30 @@ export default function IntroBrand() {
         introLogo,
         {
           top: "18vh",
-          width: "170px",
+          width: "175px",
           ease: "power3.inOut",
         },
-        0.05
+        0.04
       );
 
       tl.to(
-        ".hero-script",
+        ".hero-title-back",
         {
           opacity: 1,
-          filter: "blur(0px)",
+          y: 0,
           ease: "power2.out",
         },
-        0.22
+        0.2
       );
 
       tl.to(
-        ".hero-title",
+        ".hero-title-front",
         {
           opacity: 1,
-          filter: "blur(0px)",
+          y: 0,
           ease: "power2.out",
         },
-        0.36
+        0.34
       );
 
       tl.to(
@@ -160,34 +156,32 @@ export default function IntroBrand() {
           scale: 1,
           ease: "power2.out",
         },
-        0.52
+        0.5
       );
 
       tl.to(
-        ".hero-soft-reveal",
+        ".hero-wash",
         {
           opacity: 1,
-          filter: "blur(0px)",
           ease: "power2.out",
         },
-        0.56
+        0.54
       );
 
       tl.to(
         [".hero-header", ".hero-video-frame"],
         {
           opacity: 1,
-          filter: "blur(0px)",
           ease: "power2.out",
         },
         0.64
       );
 
       tl.to(
-        videoBox,
+        introVideo,
         {
           ...getVideoTarget(),
-          borderRadius: "2px",
+          borderRadius: 0,
           ease: "power4.inOut",
         },
         0.7
@@ -205,27 +199,16 @@ export default function IntroBrand() {
       );
 
       tl.to(
-        ".hero-video",
-        {
-          opacity: 1,
-          filter: "blur(0px)",
-          ease: "power2.out",
-        },
-        0.92
-      );
-
-      tl.to(
         ".hero-enter",
         {
           opacity: 1,
-          filter: "blur(0px)",
           ease: "power2.out",
         },
-        0.94
+        0.86
       );
 
       tl.to(
-        [videoBox, introLogo],
+        [introVideo, introLogo],
         {
           opacity: 0,
           ease: "power2.out",
@@ -241,12 +224,12 @@ export default function IntroBrand() {
 
   return (
     <section ref={introRef} className="intro">
-      <div ref={videoBoxRef} className="intro-video-box">
+      <div ref={videoRef} className="intro-video">
         <video src="/intro.mp4" autoPlay muted loop playsInline preload="auto" />
       </div>
 
       <img
-        ref={introLogoRef}
+        ref={logoRef}
         src="/logo.png"
         alt="Amato Lima"
         className="intro-logo"
@@ -259,4 +242,4 @@ export default function IntroBrand() {
       </div>
     </section>
   );
-      }
+}
