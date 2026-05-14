@@ -15,6 +15,7 @@ export default function IntroBrand() {
     const intro = introRef.current;
     const videoBox = videoBoxRef.current;
     const introLogo = introLogoRef.current;
+
     const targetVideo = document.querySelector(".hero-film") as HTMLElement | null;
     const targetLogo = document.querySelector(".hero-logo-target") as HTMLElement | null;
 
@@ -27,9 +28,8 @@ export default function IntroBrand() {
         return {
           width: rect.width,
           height: rect.height,
-          x: rect.left,
-          y: rect.top,
-          borderRadius: "18px",
+          left: rect.left,
+          top: rect.top,
         };
       };
 
@@ -38,33 +38,34 @@ export default function IntroBrand() {
 
         return {
           width: rect.width,
-          x: rect.left,
-          y: rect.top,
+          left: rect.left,
+          top: rect.top,
         };
       };
 
       gsap.set(videoBox, {
         position: "fixed",
-        top: 0,
         left: 0,
+        top: 0,
         width: "100vw",
         height: "100svh",
-        x: 0,
-        y: 0,
         borderRadius: 0,
         zIndex: 1000,
       });
 
       gsap.set(introLogo, {
         position: "fixed",
-        width: "210px",
         left: "50%",
         top: "50%",
+        width: "210px",
         xPercent: -50,
         yPercent: -50,
         zIndex: 1002,
-        opacity: 0.94,
-        filter: "blur(0px)",
+        opacity: 0.96,
+      });
+
+      gsap.set(".hero-logo-target", {
+        opacity: 0,
       });
 
       gsap.set(
@@ -75,6 +76,7 @@ export default function IntroBrand() {
           ".hero-video-frame",
           ".hero-enter",
           ".hero-soft-reveal",
+          ".hero-video",
         ],
         {
           opacity: 0,
@@ -82,12 +84,8 @@ export default function IntroBrand() {
         }
       );
 
-      gsap.set(".hero-logo-target", {
-        opacity: 0,
-      });
-
       gsap.set(".hero-bg", {
-        opacity: 0.18,
+        opacity: 0.12,
         scale: 1.06,
       });
 
@@ -95,8 +93,8 @@ export default function IntroBrand() {
         scrollTrigger: {
           trigger: ".hero",
           start: "top top",
-          end: "+=520%",
-          scrub: 5.2,
+          end: "+=620%",
+          scrub: 5.8,
           pin: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
@@ -115,11 +113,11 @@ export default function IntroBrand() {
       tl.to(
         videoBox,
         {
-          width: "76vw",
-          height: "45vh",
-          x: "12vw",
-          y: "28vh",
-          borderRadius: "18px",
+          width: "72vw",
+          height: "42vh",
+          left: "14vw",
+          top: "30vh",
+          borderRadius: "2px",
           ease: "power3.inOut",
         },
         0
@@ -128,11 +126,11 @@ export default function IntroBrand() {
       tl.to(
         introLogo,
         {
-          width: "150px",
-          y: "-22vh",
+          top: "18vh",
+          width: "170px",
           ease: "power3.inOut",
         },
-        0.04
+        0.05
       );
 
       tl.to(
@@ -140,10 +138,9 @@ export default function IntroBrand() {
         {
           opacity: 1,
           filter: "blur(0px)",
-          y: 0,
           ease: "power2.out",
         },
-        0.2
+        0.22
       );
 
       tl.to(
@@ -151,10 +148,9 @@ export default function IntroBrand() {
         {
           opacity: 1,
           filter: "blur(0px)",
-          y: 0,
           ease: "power2.out",
         },
-        0.34
+        0.36
       );
 
       tl.to(
@@ -164,7 +160,7 @@ export default function IntroBrand() {
           scale: 1,
           ease: "power2.out",
         },
-        0.48
+        0.52
       );
 
       tl.to(
@@ -174,7 +170,7 @@ export default function IntroBrand() {
           filter: "blur(0px)",
           ease: "power2.out",
         },
-        0.52
+        0.56
       );
 
       tl.to(
@@ -184,16 +180,17 @@ export default function IntroBrand() {
           filter: "blur(0px)",
           ease: "power2.out",
         },
-        0.6
+        0.64
       );
 
       tl.to(
         videoBox,
         {
           ...getVideoTarget(),
+          borderRadius: "2px",
           ease: "power4.inOut",
         },
-        0.68
+        0.7
       );
 
       tl.to(
@@ -204,7 +201,17 @@ export default function IntroBrand() {
           yPercent: 0,
           ease: "power4.inOut",
         },
-        0.68
+        0.7
+      );
+
+      tl.to(
+        ".hero-video",
+        {
+          opacity: 1,
+          filter: "blur(0px)",
+          ease: "power2.out",
+        },
+        0.92
       );
 
       tl.to(
@@ -214,7 +221,7 @@ export default function IntroBrand() {
           filter: "blur(0px)",
           ease: "power2.out",
         },
-        0.82
+        0.94
       );
 
       tl.to(
@@ -223,7 +230,7 @@ export default function IntroBrand() {
           opacity: 0,
           ease: "power2.out",
         },
-        0.97
+        0.985
       );
 
       ScrollTrigger.refresh();
