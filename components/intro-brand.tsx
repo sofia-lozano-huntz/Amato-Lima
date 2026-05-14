@@ -21,28 +21,33 @@ export default function IntroBrand() {
     const ctx = gsap.context(() => {
       gsap.set(".home-reveal", {
         opacity: 0,
-        y: 40,
+        y: 120,
       });
 
       gsap.set(video, {
-        scale: 1,
-        transformOrigin: "center center",
+        width: "100%",
+        height: "100%",
+        top: "0%",
+        left: "0%",
+        xPercent: 0,
+        yPercent: 0,
+        borderRadius: "0px",
+        boxShadow: "none",
       });
 
       gsap.set(logo, {
         scale: 1,
         y: 0,
-        transformOrigin: "center center",
+        opacity: 1,
       });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: intro,
           start: "top top",
-          end: "+=650%",
+          end: "+=420%",
           scrub: 1.2,
           pin: true,
-          pinSpacing: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
@@ -51,8 +56,15 @@ export default function IntroBrand() {
       tl.to(
         video,
         {
-          scale: 0.68,
-          ease: "none",
+          width: "62vw",
+          height: "25.5vw",
+          top: "76%",
+          left: "50%",
+          xPercent: -50,
+          yPercent: -50,
+          borderRadius: "36px",
+          boxShadow: "0 30px 90px rgba(0,0,0,0.38)",
+          ease: "power2.out",
         },
         0
       );
@@ -60,9 +72,10 @@ export default function IntroBrand() {
       tl.to(
         logo,
         {
-          y: "-41vh",
-          scale: 0.68,
-          ease: "none",
+          scale: 0.52,
+          y: "-38vh",
+          opacity: 0,
+          ease: "power2.out",
         },
         0
       );
@@ -72,9 +85,9 @@ export default function IntroBrand() {
         {
           opacity: 1,
           y: 0,
-          ease: "none",
+          ease: "power2.out",
         },
-        0.52
+        0.34
       );
 
       tl.to(
