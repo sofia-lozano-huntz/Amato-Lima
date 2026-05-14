@@ -56,9 +56,9 @@ export default function IntroBrand() {
       tl.to(
         video,
         {
-          width: "62vw",
-          height: "25.5vw",
-          top: "76%",
+          width: window.innerWidth < 768 ? "78vw" : "62vw",
+height: window.innerWidth < 768 ? "46vw" : "25.5vw",
+          top: window.innerWidth < 768 ? "72%" : "76%",
           left: "50%",
           xPercent: -50,
           yPercent: -50,
