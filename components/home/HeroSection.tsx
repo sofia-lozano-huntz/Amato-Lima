@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="hero home-reveal">
+    <section className="hero">
       <div className="hero-bg">
         <img src="/wood.jpg" alt="" aria-hidden="true" />
       </div>
