@@ -104,25 +104,23 @@ main {
 
 .metallic-text {
   background: linear-gradient(
-  112deg,
-  #4e3924 0%,
-  #8b6a45 12%,
-  #f3e0b3 24%,
-  #fff8df 33%,
-  #a98456 45%,
-  #fff2cf 56%,
-  #6f5130 70%,
-  #c8a871 84%,
-  #4b3522 100%
-);
-  background-size: 240% 100%;
+    115deg,
+    #5a4736 0%,
+    #8b7358 18%,
+    #c7b08b 34%,
+    #eee0c4 45%,
+    #9b8060 58%,
+    #6f5841 75%,
+    #b9a17a 100%
+  );
+  background-size: 280% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: metallic-shine 8s ease-in-out infinite;
+  animation: metallic-shine 12s ease-in-out infinite;
   text-shadow:
-    0 0 1px rgba(76, 55, 31, 0.28),
-    0 8px 28px rgba(72, 49, 28, 0.22);
+    0 1px 1px rgba(63, 45, 31, 0.18),
+    0 10px 34px rgba(67, 47, 31, 0.14);
 }
 
 @keyframes metallic-shine {
