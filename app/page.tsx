@@ -1,5 +1,5 @@
-import HomePage from "@/components/home/HomePage";
+import LuxuryHome from "@/components/LuxuryHome";
 
-export default function Page() {
-  return <HomePage />;
+export default function Home() {
+  return <LuxuryHome />;
 }
