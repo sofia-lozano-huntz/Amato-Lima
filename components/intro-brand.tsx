@@ -13,213 +13,141 @@ export default function IntroBrand() {
 
   useLayoutEffect(() => {
     const intro = introRef.current;
-    const introVideo = videoRef.current;
-    const introLogo = logoRef.current;
+    const video = videoRef.current;
+    const logo = logoRef.current;
+    const targetVideo = document.querySelector(".hero-film") as HTMLElement | null;
+    const targetLogo = document.querySelector(".hero-logo-target") as HTMLElement | null;
 
-    const heroVideo = document.querySelector(".hero-film") as HTMLElement | null;
-    const heroLogo = document.querySelector(".hero-logo-target") as HTMLElement | null;
-
-    if (!intro || !introVideo || !introLogo || !heroVideo || !heroLogo) return;
+    if (!intro || !video || !logo || !targetVideo || !targetLogo) return;
 
     const ctx = gsap.context(() => {
       const videoTarget = () => {
-        const r = heroVideo.getBoundingClientRect();
-        return { width: r.width, height: r.height, left: r.left, top: r.top };
+        const r = targetVideo.getBoundingClientRect();
+        return {
+          width: r.width,
+          height: r.height,
+          left: r.left,
+          top: r.top,
+        };
       };
 
       const logoTarget = () => {
-        const r = heroLogo.getBoundingClientRect();
-        return { width: r.width, left: r.left, top: r.top };
+        const r = targetLogo.getBoundingClientRect();
+        return {
+          width: r.width,
+          left: r.left,
+          top: r.top,
+        };
       };
 
-      gsap.set(introVideo, {
+      gsap.set(video, {
         position: "fixed",
-        inset: "0 auto auto 0",
+        left: 0,
+        top: 0,
         width: "100vw",
         height: "100svh",
         zIndex: 1000,
-        borderRadius: 0,
       });
 
-      gsap.set(introLogo, {
+      gsap.set(logo, {
         position: "fixed",
         left: "50%",
         top: "50%",
         width: 210,
         xPercent: -50,
         yPercent: -50,
-        zIndex: 1003,
+        zIndex: 1002,
         opacity: 1,
       });
 
+      gsap.set(".hero-header", { opacity: 0 });
       gsap.set(".hero-logo-target", { opacity: 0 });
-
-      gsap.set([".hero-title-back", ".hero-title-front"], {
-        opacity: 0,
-        filter: "blur(8px)",
-        y: 24,
-        scale: 1.03,
-      });
-
-      gsap.set([".hero-header", ".hero-video-frame", ".hero-enter"], {
-        opacity: 0,
-      });
-
-      gsap.set(".hero-bg", {
-        opacity: 0,
-        scale: 1.03,
-      });
-
-      gsap.set(".hero-wash", {
-        opacity: 0,
-      });
+      gsap.set(".hero-title-back", { opacity: 0, y: 28 });
+      gsap.set(".hero-title-front", { opacity: 0, y: 28 });
+      gsap.set(".hero-video-frame", { opacity: 0 });
+      gsap.set(".hero-enter", { opacity: 0 });
+      gsap.set(".hero-bg", { opacity: 0 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".hero",
           start: "top top",
-          end: "+=760%",
-          scrub: 1.4,
+          end: "+=900%",
+          scrub: 1.1,
           pin: true,
           pinSpacing: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
-          onUpdate: (self) => {
-            if (self.progress > 0.992) {
-              gsap.set(intro, { autoAlpha: 0 });
-              gsap.set(".hero-logo-target", { opacity: 0.96 });
-            } else {
-              gsap.set(intro, { autoAlpha: 1 });
-              gsap.set(".hero-logo-target", { opacity: 0 });
-            }
-          },
         },
       });
 
-      /*
-        FASE 1: vídeo ainda grande, logo protegida pelo glow cinematográfico
-      */
-      tl.to(
-        introVideo,
-        {
-          width: "74vw",
-          height: "46vh",
-          left: "13vw",
-          top: "30vh",
-          ease: "power2.inOut",
-        },
-        0.08
-      );
+      tl.to(video, {
+        width: "58vw",
+        height: "34vh",
+        left: "21vw",
+        top: "36vh",
+        ease: "none",
+      }, 0.05);
 
-      tl.to(
-        introLogo,
-        {
-          top: "24vh",
-          width: 188,
-          ease: "power2.inOut",
-        },
-        0.12
-      );
+      tl.to(logo, {
+        top: "17vh",
+        width: 170,
+        ease: "none",
+      }, 0.08);
 
-      /*
-        FASE 2: tipografia revela, ainda sem home completa
-      */
-      tl.to(
-        ".hero-title-back",
-        {
-          opacity: 0.88,
-          filter: "blur(0px)",
-          y: 0,
-          scale: 1,
-          ease: "power2.out",
-        },
-        0.28
-      );
+      tl.to(".hero-title-back", {
+        opacity: 0.72,
+        y: 0,
+        ease: "none",
+      }, 0.24);
 
-      tl.to(
-        ".hero-title-front",
-        {
-          opacity: 0.82,
-          filter: "blur(0px)",
-          y: 0,
-          scale: 1,
-          ease: "power2.out",
-        },
-        0.42
-      );
+      tl.to(".hero-title-front", {
+        opacity: 0.62,
+        y: 0,
+        ease: "none",
+      }, 0.38);
 
-      /*
-        FASE 3: fundo aparece depois das frases, sem overlay branco lavado
-      */
-      tl.to(
-        ".hero-bg",
-        {
-          opacity: 1,
-          scale: 1,
-          ease: "power2.out",
-        },
-        0.56
-      );
+      tl.to(".hero-bg", {
+        opacity: 1,
+        ease: "none",
+      }, 0.52);
 
-      tl.to(
-        ".hero-header",
-        {
-          opacity: 1,
-          ease: "power2.out",
-        },
-        0.66
-      );
+      tl.to(".hero-header", {
+        opacity: 1,
+        ease: "none",
+      }, 0.62);
 
-      /*
-        FASE 4: vídeo encaixa no quadro pequeno
-      */
-      tl.to(
-        introVideo,
-        {
-          ...videoTarget(),
-          ease: "power3.inOut",
-        },
-        0.7
-      );
+      tl.to(video, {
+        ...videoTarget(),
+        ease: "none",
+      }, 0.7);
 
-      tl.to(
-        introLogo,
-        {
-          ...logoTarget(),
-          xPercent: 0,
-          yPercent: 0,
-          ease: "power3.inOut",
-        },
-        0.7
-      );
+      tl.to(logo, {
+        ...logoTarget(),
+        xPercent: 0,
+        yPercent: 0,
+        ease: "none",
+      }, 0.7);
 
-      tl.to(
-        ".hero-video-frame",
-        {
-          opacity: 0.36,
-          ease: "power2.out",
-        },
-        0.78
-      );
+      tl.to(".hero-video-frame", {
+        opacity: 0.22,
+        ease: "none",
+      }, 0.76);
 
-      tl.to(
-        ".hero-enter",
-        {
-          opacity: 1,
-          ease: "power2.out",
-        },
-        0.88
-      );
+      tl.to(".hero-enter", {
+        opacity: 1,
+        ease: "none",
+      }, 0.86);
 
-      tl.to(
-        [introVideo, introLogo],
-        {
-          opacity: 0,
-          ease: "power2.out",
-        },
-        0.985
-      );
+      tl.to([video, logo], {
+        opacity: 0,
+        ease: "none",
+      }, 0.985);
+
+      tl.to(".hero-logo-target", {
+        opacity: 1,
+        ease: "none",
+      }, 0.985);
 
       ScrollTrigger.refresh();
     });
