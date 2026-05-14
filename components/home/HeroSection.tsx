@@ -1,7 +1,10 @@
-
 export default function HeroSection() {
   return (
     <section className="hero home-reveal">
+      <div className="hero-bg">
+        <img src="/wood.jpg" alt="" aria-hidden="true" />
+      </div>
+
       <header className="hero-header">
         <button className="hero-menu" aria-label="Menu">
           <span />
