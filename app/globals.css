@@ -200,7 +200,7 @@ main {
   position: relative;
   z-index: 3;
   min-height: 100svh;
-  padding-top: 20vh;
+  padding-top: 14vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -319,7 +319,7 @@ main {
   }
 
   .hero-content h1 {
-    font-size: clamp(5.8rem, 27vw, 9.5rem);
+    font-size: clamp(5rem, 24vw, 7rem);
     letter-spacing: 0.05em;
   }
 
