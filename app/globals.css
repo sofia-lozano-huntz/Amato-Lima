@@ -30,14 +30,14 @@ video {
 
 main {
   background: #e8dfd0;
-}
 
-/* HERO */
+  /* HERO */
 
 .hero {
   position: relative;
   height: 100svh;
   overflow: hidden;
+  background: #e8dfd0;
 }
 
 .hero-bg {
@@ -47,22 +47,13 @@ main {
   z-index: 1;
 }
 
-.hero::after {
-  content: "";
+.hero-wash {
   position: absolute;
   inset: 0;
   z-index: 2;
   background:
-    radial-gradient(
-      circle at 50% 18%,
-      rgba(255, 249, 238, 0.22),
-      transparent 36%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(255, 248, 238, 0.05),
-      rgba(92, 66, 45, 0.04)
-    );
+    radial-gradient(circle at 50% 12%, rgba(248, 243, 232, 0.72), transparent 38%),
+    linear-gradient(to bottom, rgba(248, 243, 232, 0.2), rgba(232, 223, 208, 0));
   pointer-events: none;
 }
 
@@ -72,23 +63,23 @@ main {
   left: 0;
   width: 100%;
   z-index: 20;
-  padding: 12px 28px 0;
+  padding: 14px 28px 0;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: start;
 }
 
 .hero-location {
-  margin-top: 11px;
+  margin-top: 10px;
   font-size: 8px;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.44em;
   text-transform: uppercase;
+  color: rgba(78, 61, 45, 0.56);
 }
 
 .hero-logo {
   width: 138px;
-  opacity: 0.94;
-  transform: translateY(0);
+  opacity: 0.96;
 }
 
 .hero-menu {
@@ -105,14 +96,7 @@ main {
   position: absolute;
   right: 0;
   height: 1px;
-  border-radius: 999px;
-  background: linear-gradient(
-    110deg,
-    #5a4736,
-    #b9a17a,
-    #eee0c4,
-    #6f5841
-  );
+  background: rgba(78, 61, 45, 0.62);
 }
 
 .hero-menu span:first-child {
@@ -125,97 +109,51 @@ main {
   width: 24px;
 }
 
-.hero-copy {
+.hero-title-back {
   position: absolute;
-  top: 31vh;
+  top: 25vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
-  z-index: 8;
+  width: 120vw;
+  z-index: 4;
   text-align: center;
-  overflow: visible;
+  pointer-events: none;
 }
 
-.hero-script {
-  display: block;
+.hero-title-back span {
   font-family: var(--font-bodoni), "Times New Roman", serif;
-  font-size: clamp(5.3rem, 21vw, 9rem);
-  line-height: 0.82;
-  letter-spacing: 0.03em;
+  font-size: clamp(5rem, 20vw, 8.6rem);
+  line-height: 0.85;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   font-weight: 500;
-  text-transform: uppercase;
-}
-
-.hero-title {
-  display: block;
-  margin-top: 10px;
-  font-family: var(--font-cormorant), "Times New Roman", serif;
-  font-size: clamp(2.25rem, 8.6vw, 4.3rem);
-  line-height: 0.9;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-.metallic-text {
-  background: linear-gradient(
-    115deg,
-    #5a4736 0%,
-    #8b7358 18%,
-    #c7b08b 34%,
-    #eee0c4 45%,
-    #9b8060 58%,
-    #6f5841 75%,
-    #b9a17a 100%
-  );
-  background-size: 320% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: metallic-shine 18s ease-in-out infinite;
-  text-shadow:
-    0 1px 1px rgba(63, 45, 31, 0.16),
-    0 10px 34px rgba(67, 47, 31, 0.12);
-}
-
-@keyframes metallic-shine {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  color: rgba(82, 66, 48, 0.58);
 }
 
 .hero-video-frame {
   position: absolute;
+  top: 37vh;
   left: 50%;
-  top: 44vh;
   transform: translateX(-50%);
   width: 70vw;
-  height: 24vh;
+  height: 30vh;
   z-index: 5;
-  border: 1px solid rgba(86, 68, 50, 0.22);
+  border: 1px solid rgba(80, 63, 45, 0.24);
   background: transparent;
-  box-shadow: none;
+  pointer-events: none;
 }
 
 .hero-video {
   position: absolute;
+  top: 40vh;
   left: 50%;
-  top: 47vh;
   transform: translateX(-50%);
-  width: 58vw;
-  height: 19vh;
+  width: 54vw;
+  height: 20vh;
   z-index: 6;
   overflow: hidden;
-  border-radius: 2px;
-  box-shadow: 0 18px 42px rgba(48, 35, 25, 0.12);
+  border-radius: 0;
+  box-shadow: 0 18px 44px rgba(45, 31, 21, 0.14);
 }
 
 .hero-video video {
@@ -223,6 +161,27 @@ main {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.98) contrast(0.96) saturate(0.9);
+}
+
+.hero-title-front {
+  position: absolute;
+  top: 52vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120vw;
+  z-index: 7;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero-title-front span {
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+  font-size: clamp(2.2rem, 8vw, 4.2rem);
+  line-height: 0.9;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: rgba(72, 57, 42, 0.54);
 }
 
 .hero-enter {
@@ -234,28 +193,28 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 13px;
-  color: rgba(91, 71, 52, 0.64);
-  font-size: 9px;
+  gap: 7px;
+  color: rgba(78, 61, 45, 0.5);
+  font-size: 8px;
   letter-spacing: 0.34em;
   text-transform: uppercase;
-}
-
-.hero-enter span {
-  width: 1px;
-  height: 42px;
-  background: rgba(91, 71, 52, 0.4);
 }
 
 .hero-enter p {
   margin: 0;
 }
 
+.hero-enter span {
+  width: 1px;
+  height: 24px;
+  background: rgba(78, 61, 45, 0.32);
+}
+
 .hero-enter i {
-  width: 9px;
-  height: 9px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  border: 1px solid rgba(91, 71, 52, 0.52);
+  border: 1px solid rgba(78, 61, 45, 0.42);
 }
 
 /* INTRO */
@@ -268,14 +227,14 @@ main {
   pointer-events: none;
 }
 
-.intro-video-box {
+.intro-video {
   overflow: hidden;
-  background: transparent;
-  will-change: width, height, left, top, border-radius, opacity;
-  box-shadow: 0 26px 80px rgba(35, 23, 15, 0.14);
+  background: #0e0c09;
+  will-change: width, height, left, top, opacity;
+  box-shadow: 0 24px 80px rgba(35, 23, 15, 0.16);
 }
 
-.intro-video-box::after {
+.intro-video::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -283,22 +242,22 @@ main {
   background:
     linear-gradient(
       to bottom,
-      rgba(20, 14, 9, 0.16),
-      rgba(20, 14, 9, 0.26)
+      rgba(18, 14, 10, 0.12),
+      rgba(18, 14, 10, 0.26)
     ),
     radial-gradient(
       circle at center,
-      rgba(245, 233, 212, 0.04),
-      rgba(40, 28, 18, 0.24)
+      rgba(255, 244, 226, 0.06),
+      rgba(28, 20, 14, 0.2)
     );
   pointer-events: none;
 }
 
-.intro-video-box video {
+.intro-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.94) contrast(0.96) saturate(0.9);
+  filter: brightness(0.96) contrast(0.96) saturate(0.9);
 }
 
 .intro-logo {
@@ -325,6 +284,10 @@ main {
   pointer-events: none;
 }
 
+.scroll-indicator p {
+  margin: 0;
+}
+
 .scroll-indicator span {
   width: 1px;
   height: 24px;
@@ -332,8 +295,8 @@ main {
 }
 
 .scroll-indicator i {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   border: 1px solid rgba(246, 238, 228, 0.5);
 }
