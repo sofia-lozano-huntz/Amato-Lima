@@ -288,9 +288,15 @@
 }
 
 .heroHabitar {
-  font-size: clamp(44px, 13vw, 72px);
-  margin-top: -10px;
-  transform: translateX(8%);
+  font-size: clamp(94px, 38vw, 116px); /* tamanho */
+  
+  transform: translateX(16%); /* esquerda/direita */
+
+  margin-top: -8px; /* sobe/desce */
+
+  letter-spacing: 0.06em; /* tracking */
+
+  line-height: 0.82; /* altura interna */
 }
 
 .heroHabitar span:first-child {
