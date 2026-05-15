@@ -1,5 +1,9 @@
 import "./globals.css";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+
+import {
+  Cormorant_Garamond,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -14,6 +18,11 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
 });
 
+export const metadata = {
+  title: "Amato Lima",
+  description: "Ativos imobiliários",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -27,22 +36,4 @@ export default function RootLayout({
       <body>{children}</body>
     </html>
   );
-}
-
-export const metadata = {
-  title: "Amato Lima",
-  description: "Ativos imobiliários",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
-  );
-}
 }
