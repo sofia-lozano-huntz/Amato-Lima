@@ -34,12 +34,15 @@ export default function Hero() {
         <button className="heroNavButton">CONTATO</button>
       </header>
 
-      <div className="heroContent">
-        <div className="heroTitle">
-          <h1 className="heroArt">A arte</h1>
+      <div className="heroTitle">
+  <h1 className="heroArt">A arte</h1>
 
-          <h2 className="heroHabitar">DE HABITAR</h2>
-        </div>
+  <h2 className="heroHabitar">
+    DE
+    <br />
+    HABITAR
+  </h2>
+</div>
 
         <div className="heroSmallLine" />
 
