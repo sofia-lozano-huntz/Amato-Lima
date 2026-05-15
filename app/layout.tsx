@@ -1,21 +1,18 @@
 import "./globals.css";
 
-import {
-  Cormorant_Garamond,
-  Plus_Jakarta_Sans,
-} from "next/font/google";
+import localFont from "next/font/local";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+import { Bodoni_Moda } from "next/font/google";
+
+const westwood = localFont({
+  src: "../public/font/westwood-studio.ttf",
+  variable: "--font-westwood",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-jakarta",
+  variable: "--font-bodoni",
 });
 
 export const metadata = {
@@ -31,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${cormorant.variable} ${jakarta.variable}`}
+      className={`${westwood.variable} ${bodoni.variable}`}
     >
       <body>{children}</body>
     </html>
