@@ -53,9 +53,6 @@
   z-index: 10;
 }
 
-  padding-top: 10px;
-}
-
 .heroTitle {
   display: flex;
   flex-direction: column;
@@ -174,15 +171,6 @@
   filter: blur(0.25px);
 }
 
-.heroHeader {
-  position: relative;
-  z-index: 4;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 34px 52px;
-}
-
 .heroLogo {
   width: 96px;
   height: auto;
@@ -297,7 +285,6 @@
     filter:
     drop-shadow(0 0 12px rgba(0,0,0,0.22))
     drop-shadow(0 0 30px rgba(0,0,0,0.12));
-  }
   }
 
   .heroNavButton {
