@@ -1,0 +1,200 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  color: #f3ece4;
+  overflow: hidden;
+  background: #090706;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  background-image: url("/wood.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  filter: contrast(1.15) brightness(0.72) saturate(0.8);
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 8, 5, 0.42);
+  z-index: 1;
+}
+
+.heroVignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, transparent 18%, rgba(0, 0, 0, 0.68) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent 32%, rgba(0, 0, 0, 0.35));
+  z-index: 1;
+}
+
+.heroCenterLine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 2;
+}
+
+.heroHeader {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 34px 52px;
+}
+
+.heroLogo {
+  width: 96px;
+  height: auto;
+  opacity: 0.88;
+}
+
+.heroNavButton {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: none;
+  border: none;
+  color: rgba(243, 236, 228, 0.75);
+  letter-spacing: 0.45em;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.heroHamburger {
+  width: 20px;
+  height: 10px;
+  border-top: 1px solid rgba(243, 236, 228, 0.8);
+  border-bottom: 1px solid rgba(243, 236, 228, 0.8);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  min-height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 190px 24px 54px;
+}
+
+.heroContent h1 {
+  font-size: clamp(110px, 20vw, 300px);
+  font-weight: 300;
+  line-height: 0.72;
+  letter-spacing: 0.055em;
+  color: rgba(246, 238, 225, 0.92);
+}
+
+.heroContent h2 {
+  margin-top: 28px;
+  font-family: Arial, sans-serif;
+  font-size: clamp(18px, 2.6vw, 34px);
+  letter-spacing: 0.65em;
+  font-weight: 300;
+  color: rgba(243, 236, 228, 0.78);
+}
+
+.heroSmallLine {
+  width: 1px;
+  height: 28px;
+  margin-top: 28px;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.heroContent p {
+  margin-top: 22px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.55em;
+  line-height: 2.1;
+  color: rgba(243, 236, 228, 0.76);
+}
+
+.heroVideoCard {
+  width: min(760px, 72vw);
+  margin-top: 52px;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+}
+
+.heroVideoCard video {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  display: block;
+  object-fit: cover;
+}
+
+.heroBottomLine {
+  width: 1px;
+  height: 42px;
+  margin-top: 28px;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.heroExplore {
+  margin-top: 18px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.7em;
+  color: rgba(243, 236, 228, 0.72);
+}
+
+@media (max-width: 768px) {
+  .heroHeader {
+    padding: 28px 28px;
+    align-items: center;
+  }
+
+  .heroLogo {
+    width: 78px;
+  }
+
+  .heroNavButton {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+  }
+
+  .heroContent {
+    padding-top: 150px;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(92px, 26vw, 150px);
+    letter-spacing: 0.035em;
+  }
+
+  .heroContent h2 {
+    margin-top: 22px;
+    font-size: 17px;
+    letter-spacing: 0.48em;
+  }
+
+  .heroContent p {
+    font-size: 10px;
+    letter-spacing: 0.42em;
+  }
+
+  .heroVideoCard {
+    width: min(560px, 82vw);
+    margin-top: 48px;
+    border-radius: 28px;
+  }
+
+  .heroVideoCard video {
+    aspect-ratio: 16 / 9;
+  }
+}
