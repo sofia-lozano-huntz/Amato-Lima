@@ -255,7 +255,7 @@
   }
 
   .heroLogo {
-    width: 68px;
+    width: 98px;
   }
 
   .heroNavButton {
@@ -288,7 +288,8 @@
 }
 
   .heroHabitar span:first-child {
-  font-size: 0.48em;
+  transform: translateY(-2px);
+  font-size: 0.44em;
   letter-spacing: 0.04em;
   margin-left: 0px;
   margin-bottom: 2px;
