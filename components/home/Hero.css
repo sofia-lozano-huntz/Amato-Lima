@@ -36,7 +36,7 @@
 .heroArt {
   font-family: var(--font-westwood);
 
-  font-size: clamp(58px, 10vw, 140px);
+  font-size: clamp(52px, 7vw, 110px);
 
   font-weight: 400;
 
@@ -50,21 +50,21 @@
 }
 
 .heroHabitar {
-  font-family: var(--font-bodoni);
+  font-family: var(--font-classy);
 
-  font-size: clamp(20px, 2.3vw, 38px);
+  font-size: clamp(26px, 3vw, 56px);
+
+  letter-spacing: 0.18em;
+
+  font-weight: 400;
 
   text-transform: uppercase;
 
-  font-weight: 700;
-
-  letter-spacing: 0.32em;
-
   color: rgba(244,238,232,.96);
 
-  line-height: 1;
+  line-height: .95;
 
-  margin-top: -8px;
+  margin-top: -18px;
 }
 
 .heroTitle{
