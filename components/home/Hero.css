@@ -269,6 +269,10 @@
     justify-content: center;
   }
 
+  .heroTitle {
+  transform: translateY(-40px);
+  }
+
 .heroArt {
   font-size: clamp(84px, 28vw, 106px); /* tamanho */
   
