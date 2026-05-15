@@ -299,7 +299,7 @@
 
   position: relative;
 
-  margin-top: -52px; /* sobe/desce */
+  margin-top: -60px; /* sobe/desce */
 
   letter-spacing: 0.06em; /* tracking */
 
@@ -308,7 +308,7 @@
 
   .heroHabitar span:first-child {
   transform: translateY(-2px);
-  font-size: 0.44em;
+  font-size: 0.42em;
   letter-spacing: 0.04em;
   margin-left: 0px;
   margin-bottom: 2px;
