@@ -38,50 +38,53 @@
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  background: rgba(255,255,255,.06);
+  background: rgba(255, 255, 255, 0.04);
   z-index: 2;
+  filter: blur(0.25px);
 }
 
 /* linha topo */
 .lineTop {
   top: 0;
-  height: 52px;
+  height: 42px;
 }
 
 /* linha abaixo da logo */
 .lineLogo {
-  top: 152px;
-  height: 118px;
+  top: 150px;
+  height: 72px;
 }
 
 /* linha pequena central */
 .lineMiddle {
   top: 505px;
-  height: 18px;
+  height: 12px;
 }
 
 /* cruz */
 .crossHorizontal {
   position: absolute;
-  top: 513px;
+  top: 511px;
   left: 50%;
   transform: translateX(-50%);
-  width: 14px;
+  width: 10px;
   height: 1px;
-  background: rgba(255,255,255,.07);
+  background: rgba(255, 255, 255, 0.045);
   z-index: 2;
+  filter: blur(0.25px);
 }
 
 /* linha abaixo do vídeo */
 .lineVideo {
   top: 790px;
-  height: 22px;
+  height: 18px;
 }
 
 /* linha final */
 .lineBottom {
   top: 865px;
   height: 92px;
+  background: rgba(255, 255, 255, 0.055);
 }
 
 /* bolinha */
@@ -93,7 +96,7 @@
   width: 3px;
   height: 3px;
   border-radius: 999px;
-  background: rgba(255,255,255,.30);
+  background: rgba(255, 255, 255, 0.26);
   z-index: 3;
 }
 
@@ -277,38 +280,38 @@
     letter-spacing: 0.5em;
   }
 
-  .lineTop {
-  height: 72px;
+.lineTop {
+  top: 0;
+  height: 38px;
 }
 
 .lineLogo {
-  top: 105px;
-  height: 120px;
+  top: 126px;
+  height: 58px;
 }
 
 .lineMiddle {
-  top: 430px;
-  height: 18px;
+  top: 404px;
+  height: 10px;
 }
 
 .crossHorizontal {
-  top: 439px;
-  width: 14px;
+  top: 409px;
+  width: 8px;
 }
 
 .lineVideo {
-  top: 690px;
-  height: 24px;
+  top: 688px;
+  height: 18px;
 }
 
 .lineBottom {
-  top: 748px;
-  height: 90px;
+  top: 760px;
+  height: 92px;
 }
 
 .lineDot {
-  top: 740px;
+  top: 750px;
   width: 3px;
   height: 3px;
-}
 }
