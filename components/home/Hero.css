@@ -52,15 +52,19 @@
 .heroHabitar {
   font-family: var(--font-bodoni);
 
-  font-size: clamp(18px, 2vw, 34px);
-
-  letter-spacing: 0.42em;
+  font-size: clamp(20px, 2.3vw, 38px);
 
   text-transform: uppercase;
 
-  font-weight: 500;
+  font-weight: 700;
 
-  color: rgba(244,238,232,.92);
+  letter-spacing: 0.32em;
+
+  color: rgba(244,238,232,.96);
+
+  line-height: 1;
+
+  margin-top: -8px;
 }
 
 .heroTitle{
