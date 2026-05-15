@@ -2,17 +2,14 @@ import "./globals.css";
 
 import localFont from "next/font/local";
 
-import { Bodoni_Moda } from "next/font/google";
-
 const westwood = localFont({
   src: "../public/font/westwood-studio.ttf",
   variable: "--font-westwood",
 });
 
-const bodoni = Bodoni_Moda({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-bodoni",
+const classyvogueregular = localFont({
+  src: "../public/font/classy-vogue-regular.ttf",
+  variable: "--font-classyvogueregular",
 });
 
 export const metadata = {
