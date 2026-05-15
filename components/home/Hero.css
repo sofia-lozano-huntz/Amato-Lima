@@ -38,62 +38,62 @@
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  background: rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
   z-index: 2;
 }
 
-/* topo */
+/* linha topo */
 .lineTop {
   top: 0;
-  height: 88px;
+  height: 52px;
 }
 
-/* depois da logo */
+/* linha abaixo da logo */
 .lineLogo {
-  top: 128px;
-  height: 180px;
+  top: 152px;
+  height: 118px;
 }
 
-/* pequena linha perto do slogan */
+/* linha pequena central */
 .lineMiddle {
-  top: 520px;
-  height: 26px;
+  top: 505px;
+  height: 18px;
 }
 
-/* pequena cruz */
+/* cruz */
 .crossHorizontal {
   position: absolute;
-  top: 532px;
+  top: 513px;
   left: 50%;
   transform: translateX(-50%);
-  width: 18px;
+  width: 14px;
   height: 1px;
-  background: rgba(255,255,255,.10);
+  background: rgba(255,255,255,.07);
   z-index: 2;
 }
 
-/* depois do vídeo */
+/* linha abaixo do vídeo */
 .lineVideo {
-  top: 820px;
-  height: 34px;
+  top: 790px;
+  height: 22px;
 }
 
 /* linha final */
 .lineBottom {
-  top: 900px;
-  height: 120px;
+  top: 865px;
+  height: 92px;
 }
 
 /* bolinha */
 .lineDot {
   position: absolute;
-  top: 890px;
+  top: 855px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   border-radius: 999px;
-  background: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.30);
   z-index: 3;
 }
 
