@@ -274,7 +274,7 @@
   }
 
 .heroArt {
-  font-size: clamp(92px, 34vw, 112px); /* tamanho */
+  font-size: clamp(90px, 32vw, 110px); /* tamanho */
   
   transform: translateX(20%); /* esquerda/direita */
 
@@ -287,14 +287,22 @@
   line-height: 0.72; /* altura interna */
 }
 
+  .heroHabitar span:first-child {
+  font-size: 0.48em;
+  letter-spacing: 0.04em;
+  margin-left: 0px;
+  margin-bottom: 2px;
+  line-height: 0.8;
+  }
+
 .heroHabitar {
-  font-size: clamp(66px, 12vw, 88px); /* tamanho */
+  font-size: clamp(68px, 14vw, 90px); /* tamanho */
   
   transform: translateX(2%); /* esquerda/direita */
 
   margin-top: -8px; /* sobe/desce */
 
-  letter-spacing: 0.12em; /* tracking */
+  letter-spacing: 0.08em; /* tracking */
 
   line-height: 0.82; /* altura interna */
 }
