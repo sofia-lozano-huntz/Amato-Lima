@@ -33,6 +33,70 @@
   z-index: 1;
 }
 
+.line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: rgba(255,255,255,.10);
+  z-index: 2;
+}
+
+/* topo */
+.lineTop {
+  top: 0;
+  height: 88px;
+}
+
+/* depois da logo */
+.lineLogo {
+  top: 128px;
+  height: 180px;
+}
+
+/* pequena linha perto do slogan */
+.lineMiddle {
+  top: 520px;
+  height: 26px;
+}
+
+/* pequena cruz */
+.crossHorizontal {
+  position: absolute;
+  top: 532px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 1px;
+  background: rgba(255,255,255,.10);
+  z-index: 2;
+}
+
+/* depois do vídeo */
+.lineVideo {
+  top: 820px;
+  height: 34px;
+}
+
+/* linha final */
+.lineBottom {
+  top: 900px;
+  height: 120px;
+}
+
+/* bolinha */
+.lineDot {
+  position: absolute;
+  top: 890px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.45);
+  z-index: 3;
+}
+
 .heroHeader {
   position: relative;
   z-index: 4;
@@ -212,4 +276,39 @@
     font-size: 8px;
     letter-spacing: 0.5em;
   }
+
+  .lineTop {
+  height: 72px;
+}
+
+.lineLogo {
+  top: 105px;
+  height: 120px;
+}
+
+.lineMiddle {
+  top: 430px;
+  height: 18px;
+}
+
+.crossHorizontal {
+  top: 439px;
+  width: 14px;
+}
+
+.lineVideo {
+  top: 690px;
+  height: 24px;
+}
+
+.lineBottom {
+  top: 748px;
+  height: 90px;
+}
+
+.lineDot {
+  top: 740px;
+  width: 3px;
+  height: 3px;
+}
 }
