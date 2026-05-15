@@ -35,7 +35,7 @@ export default function Hero() {
       </header>
 
       <div className="heroContent">
-        <h1>ARTE</h1>
+        <h1>A arte</h1>
         <h2>DE HABITAR</h2>
 
         <div className="heroSmallLine" />
