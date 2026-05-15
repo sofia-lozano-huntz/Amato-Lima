@@ -278,6 +278,8 @@
   
   transform: translateX(8%); /* esquerda/direita */
 
+  position: relative;
+
   margin-top: -52px; /* sobe/desce */
 
   letter-spacing: 0.04em; /* tracking */
