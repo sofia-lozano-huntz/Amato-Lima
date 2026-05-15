@@ -63,6 +63,14 @@
   color: rgba(244,238,232,.92);
 }
 
+.heroTitle{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:8px;
+}
+
 .line {
   position: absolute;
   left: 50%;
