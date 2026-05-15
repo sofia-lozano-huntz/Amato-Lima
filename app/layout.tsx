@@ -1,22 +1,5 @@
 import "./globals.css";
-
-export const metadata = {
-  title: "Amato Lima",
-  description: "Ativos imobiliários",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
-  );
-
-  import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -41,6 +24,23 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${cormorant.variable} ${jakarta.variable}`}
     >
+      <body>{children}</body>
+    </html>
+  );
+}
+
+export const metadata = {
+  title: "Amato Lima",
+  description: "Ativos imobiliários",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="pt-BR">
       <body>{children}</body>
     </html>
   );
