@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="heroBackground" />
       <div className="heroOverlay" />
       <div className="heroVignette" />
-      {/* Decorative Lines */}
+
       <div className="line lineTop" />
       <div className="line lineLogo" />
       <div className="line lineMiddle" />
@@ -34,17 +34,12 @@ export default function Hero() {
         <button className="heroNavButton">CONTATO</button>
       </header>
 
-      <div className="heroTitle">
+      <div className="heroContent">
+        <div className="heroTitle">
+          <h1 className="heroArt">A arte</h1>
 
-  <h1 className="heroArt">
-    A arte
-  </h1>
-
-  <h2 className="heroHabitar">
-    DE HABITAR
-  </h2>
-
-</div>
+          <h2 className="heroHabitar">DE HABITAR</h2>
+        </div>
 
         <div className="heroSmallLine" />
 
