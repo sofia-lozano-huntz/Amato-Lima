@@ -154,70 +154,72 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
 
   .heroHeader {
-    padding: 28px 28px;
+    padding: 22px 28px;
     align-items: center;
   }
 
   .heroLogo {
-    width: 78px;
+    width: 68px;
   }
 
   .heroNavButton {
-    font-size: 9px;
-    letter-spacing: 0.35em;
+    font-size: 8px;
+    letter-spacing: 0.34em;
   }
 
   .heroContent {
-    padding-top: 118px;
-    padding-bottom: 34px;
-    min-height: 100vh;
+    min-height: calc(100svh - 80px);
+    padding: 72px 22px 24px;
     justify-content: center;
   }
 
   .heroContent h1 {
-    font-size: clamp(84px, 24vw, 130px);
-    line-height: .82;
+    font-size: clamp(76px, 22vw, 118px);
+    line-height: 0.78;
+    letter-spacing: 0.03em;
   }
 
   .heroContent h2 {
-    margin-top: 14px;
-    font-size: 15px;
-    letter-spacing: 0.42em;
-  }
-
-  .heroSmallLine {
-    height: 18px;
-    margin-top: 18px;
-  }
-
-  .heroContent p {
-    margin-top: 18px;
-    font-size: 9px;
-    line-height: 1.9;
+    margin-top: 10px;
+    font-size: 13px;
     letter-spacing: 0.38em;
   }
 
+  .heroSmallLine {
+    height: 14px;
+    margin-top: 14px;
+  }
+
+  .heroContent p {
+    margin-top: 14px;
+    font-size: 8px;
+    line-height: 1.8;
+    letter-spacing: 0.34em;
+  }
+
   .heroVideoCard {
-    width: 84vw;
-    margin-top: 34px;
-    border-radius: 26px;
+    width: 82vw;
+    margin-top: 26px;
+    border-radius: 24px;
   }
 
   .heroVideoCard video {
-    aspect-ratio: 16 / 8;
+    aspect-ratio: 16 / 7.5;
   }
 
   .heroBottomLine {
-    height: 24px;
-    margin-top: 20px;
+    height: 18px;
+    margin-top: 16px;
   }
 
   .heroExplore {
-    margin-top: 12px;
-    font-size: 9px;
-    letter-spacing: 0.55em;
+    margin-top: 10px;
+    font-size: 8px;
+    letter-spacing: 0.5em;
   }
-
 }
