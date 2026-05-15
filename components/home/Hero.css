@@ -152,17 +152,12 @@
 }
 
 .heroHeader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-
+  position: relative;
+  z-index: 4;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
-  padding: 28px 40px;
+  align-items: flex-start;
+  padding: 34px 52px;
 }
 
 .heroLogo {
@@ -254,9 +249,10 @@
     min-height: 100svh;
   }
 
-  .heroHeader {
-  padding: 20px 24px;
-  }
+ .heroHeader {
+    padding: 28px 28px;
+    align-items: center;
+ }
 
   .heroLogo {
     width: 128px;
