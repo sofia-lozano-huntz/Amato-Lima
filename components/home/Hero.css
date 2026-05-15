@@ -50,7 +50,7 @@
 }
 
 .heroHabitar {
-  font-family: var(--font-classy);
+  font-family: var(--font-classyvogueregular);
 
   font-size: clamp(26px, 3vw, 56px);
 
