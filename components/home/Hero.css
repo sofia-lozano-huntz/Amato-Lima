@@ -282,7 +282,7 @@
 
   margin-top: -52px; /* sobe/desce */
 
-  letter-spacing: 0.04em; /* tracking */
+  letter-spacing: 0.08em; /* tracking */
 
   line-height: 0.72; /* altura interna */
 }
@@ -294,7 +294,7 @@
 
   margin-top: -8px; /* sobe/desce */
 
-  letter-spacing: 0.06em; /* tracking */
+  letter-spacing: 0.12em; /* tracking */
 
   line-height: 0.82; /* altura interna */
 }
