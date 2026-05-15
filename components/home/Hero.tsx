@@ -7,7 +7,6 @@ export default function Hero() {
       <div className="heroBackground" />
       <div className="heroOverlay" />
       <div className="heroVignette" />
-      <div className="heroCenterLine" />
 
       <header className="heroHeader">
         <button className="heroNavButton">
