@@ -33,6 +33,16 @@
   z-index: 1;
 }
 
+.heroHeader {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 12, 10, 0.22),
+    rgba(15, 12, 10, 0)
+  );
+
+  padding-top: 10px;
+}
+
 .heroTitle {
   display: flex;
   flex-direction: column;
@@ -250,8 +260,13 @@
   }
 
   .heroHeader {
-    padding: 22px 28px;
-    align-items: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 12, 10, 0.22),
+    rgba(15, 12, 10, 0)
+  );
+
+  padding-top: 10px;
   }
 
   .heroLogo {
