@@ -234,8 +234,8 @@
   }
 
  .heroHeader {
-    padding: 6px 28px;
-    align-items: center;
+    padding: 8px 28px 0;
+    transform: translateY(-12px);
  }
 
   .heroLogo {
