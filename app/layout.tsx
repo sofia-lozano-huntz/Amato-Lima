@@ -7,9 +7,9 @@ const westwood = localFont({
   variable: "--font-westwood",
 });
 
-const classyvogueregular = localFont({
+const classyVogue = localFont({
   src: "../public/font/classy-vogue-regular.ttf",
-  variable: "--font-classyvogueregular",
+  variable: "--font-classy-vogue",
 });
 
 export const metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${westwood.variable} ${bodoni.variable}`}
+      className={`${westwood.variable} ${classyVogue.variable}`}
     >
       <body>{children}</body>
     </html>
