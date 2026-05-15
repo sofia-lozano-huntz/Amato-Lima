@@ -17,13 +17,6 @@
   z-index: 0;
 }
 
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(12, 8, 5, 0.18);
-  z-index: 1;
-}
-
 .heroTitle {
   display: flex;
   flex-direction: column;
@@ -247,9 +240,6 @@
 
   .heroLogo {
     width: 150px;
-    filter:
-    drop-shadow(0 0 12px rgba(0,0,0,0.22))
-    drop-shadow(0 0 30px rgba(0,0,0,0.12));
   }
 
   .heroNavButton {
