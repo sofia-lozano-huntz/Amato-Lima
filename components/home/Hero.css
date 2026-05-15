@@ -51,6 +51,7 @@
   letter-spacing: 0.01em;
   transform: translateX(-8%);
   position: relative;
+  margin-top: 5px;
   z-index: 2;
 }
 
