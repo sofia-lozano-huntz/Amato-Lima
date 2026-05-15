@@ -34,11 +34,24 @@
 }
 
 .heroHeader {
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 12, 10, 0.22),
-    rgba(15, 12, 10, 0)
-  );
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 28px 24px;
+
+  z-index: 10;
+}
 
   padding-top: 10px;
 }
@@ -260,17 +273,31 @@
   }
 
   .heroHeader {
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 12, 10, 0.22),
-    rgba(15, 12, 10, 0)
-  );
+  position: absolute;
 
-  padding-top: 10px;
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 28px 24px;
+
+  z-index: 10;
   }
 
   .heroLogo {
     width: 128px;
+    filter:
+    drop-shadow(0 0 12px rgba(0,0,0,0.22))
+    drop-shadow(0 0 30px rgba(0,0,0,0.12));
+  }
   }
 
   .heroNavButton {
