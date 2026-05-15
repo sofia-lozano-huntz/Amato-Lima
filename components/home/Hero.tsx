@@ -7,6 +7,14 @@ export default function Hero() {
       <div className="heroBackground" />
       <div className="heroOverlay" />
       <div className="heroVignette" />
+      {/* Decorative Lines */}
+      <div className="line lineTop" />
+      <div className="line lineLogo" />
+      <div className="line lineMiddle" />
+      <div className="crossHorizontal" />
+      <div className="line lineVideo" />
+      <div className="line lineBottom" />
+      <div className="lineDot" />
 
       <header className="heroHeader">
         <button className="heroNavButton">
