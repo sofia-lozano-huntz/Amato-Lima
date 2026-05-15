@@ -158,6 +158,13 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 34px 52px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.10),
+    rgba(0,0,0,0)
+  );
+
+  backdrop-filter: blur(2px);
 }
 
 .heroLogo {
@@ -252,6 +259,13 @@
  .heroHeader {
     padding: 28px 28px;
     align-items: center;
+   background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.16),
+    rgba(0,0,0,0)
+  );
+
+  backdrop-filter: blur(3px);
  }
 
   .heroLogo {
