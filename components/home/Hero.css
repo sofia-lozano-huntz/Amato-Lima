@@ -276,7 +276,7 @@
 .heroArt {
   font-size: clamp(84px, 28vw, 106px); /* tamanho */
   
-  transform: translateX(6%); /* esquerda/direita */
+  transform: translateX(4%); /* esquerda/direita */
 
   position: relative;
 
@@ -290,7 +290,7 @@
 .heroHabitar {
   font-size: clamp(64px, 10vw, 86px); /* tamanho */
   
-  transform: translateX(14%); /* esquerda/direita */
+  transform: translateX(16%); /* esquerda/direita */
 
   margin-top: -8px; /* sobe/desce */
 
