@@ -288,7 +288,7 @@
 }
 
 .heroHabitar {
-  font-size: clamp(54px, 8vw, 76px); /* tamanho */
+  font-size: clamp(64px, 10vw, 86px); /* tamanho */
   
   transform: translateX(12%); /* esquerda/direita */
 
