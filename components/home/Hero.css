@@ -33,46 +33,57 @@
   z-index: 1;
 }
 
+.heroTitle {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  width: fit-content;
+
+  margin: 0 auto;
+}
+
+/* A arte */
 .heroArt {
   font-family: var(--font-westwood);
 
-  font-size: clamp(52px, 7vw, 110px);
+  font-size: clamp(78px, 10vw, 170px);
 
-  font-weight: 400;
-
-  line-height: .9;
+  line-height: .8;
 
   color: #f4eee8;
 
   opacity: .95;
 
-  letter-spacing: 0.01em;
+  z-index: 3;
+
+  position: relative;
+
+  left: -22px;
 }
 
+/* DE HABITAR */
 .heroHabitar {
-  font-family: var(--font-classy-vogue);
+  font-family: var(--font-classyvogueregular);
 
-  font-size: clamp(26px, 3vw, 56px);
+  font-size: clamp(56px, 6.8vw, 120px);
 
-  letter-spacing: 0.18em;
+  line-height: .82;
 
-  font-weight: 400;
-
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
 
   color: rgba(244,238,232,.96);
 
-  line-height: .95;
+  text-transform: uppercase;
 
-  margin-top: -18px;
-}
+  margin-top: -28px;
 
-.heroTitle{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  margin-left: 34px;
 
-  gap:8px;
+  z-index: 2;
 }
 
 .line {
