@@ -276,7 +276,7 @@
 .heroArt {
   font-size: clamp(84px, 28vw, 106px); /* tamanho */
   
-  transform: translateX(14%); /* esquerda/direita */
+  transform: translateX(10%); /* esquerda/direita */
 
   margin-top: -22px; /* sobe/desce */
 
