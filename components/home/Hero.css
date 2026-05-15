@@ -270,7 +270,7 @@
   }
 
   .heroTitle {
-  transform: translateY(-40px);
+  transform: translate(7%, -40px);
   }
 
 .heroArt {
