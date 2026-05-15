@@ -17,6 +17,40 @@
   z-index: 0;
 }
 
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 14%,
+    rgba(12, 8, 5, 0.08) 28%,
+    rgba(12, 8, 5, 0.18) 100%
+  );
+  z-index: 1;
+}
+
+.heroVignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 8%,
+      transparent 0%,
+      transparent 16%,
+      rgba(0, 0, 0, 0.08) 32%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 18%,
+      rgba(0, 0, 0, 0.10) 48%,
+      rgba(0, 0, 0, 0.20) 100%
+    );
+  z-index: 1;
+}
+
 .heroTitle {
   display: flex;
   flex-direction: column;
