@@ -238,7 +238,9 @@
  }
 
   .heroLogo {
-    width: 150px;
+    width: 120px;
+    position: relative;
+  top: -14px;
   }
 
   .heroNavButton {
