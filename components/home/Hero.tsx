@@ -36,7 +36,7 @@ export default function Hero() {
 
       <div className="heroContent">
         <div className="heroTitle">
-          <h1 className="heroArt">A arte</h1>
+          <h1 className="heroArt">Arte</h1>
 
           <h2 className="heroHabitar">
             <span>DE</span>
