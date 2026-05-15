@@ -274,8 +274,15 @@
 }
 
 .heroArt {
-  font-size: clamp(64px, 18vw, 96px);
-  transform: translateX(-7%);
+  font-size: clamp(64px, 18vw, 96px); /* tamanho */
+  
+  transform: translateX(-7%); /* esquerda/direita */
+
+  margin-top: -8px; /* sobe/desce */
+
+  letter-spacing: 0.02em; /* tracking */
+
+  line-height: 0.82; /* altura interna */
 }
 
 .heroHabitar {
