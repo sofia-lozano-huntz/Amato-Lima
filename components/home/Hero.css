@@ -269,10 +269,6 @@
     justify-content: center;
   }
 
-.heroTitle {
-  width: min(430px, 82vw);
-}
-
 .heroArt {
   font-size: clamp(84px, 28vw, 106px); /* tamanho */
   
