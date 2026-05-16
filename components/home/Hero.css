@@ -82,6 +82,31 @@
   z-index: 2;
 }
 
+.heroArt span::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(255,255,255,.15) 44%,
+    rgba(255,255,255,.75) 50%,
+    rgba(255,236,190,.35) 56%,
+    transparent 64%,
+    transparent 100%
+  );
+
+  background-size: 250% 100%;
+  background-position: 140% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
 .heroHabitar {
   font-family: var(--font-classy-vogue);
 
@@ -130,24 +155,24 @@
   inset: 0;
 
   background: linear-gradient(
-    105deg,
+    110deg,
     transparent 0%,
-    transparent 38%,
-    rgba(255,255,255,.15) 44%,
-    rgba(255,255,255,.75) 50%,
-    rgba(255,236,190,.35) 56%,
-    transparent 64%,
+    transparent 42%,
+    rgba(255, 255, 255, 0.08) 46%,
+    rgba(255, 246, 220, 0.55) 50%,
+    rgba(255, 255, 255, 0.16) 54%,
+    transparent 60%,
     transparent 100%
   );
 
-  background-size: 250% 100%;
-  background-position: 140% 0;
+  background-size: 300% 100%;
+  background-position: 130% 0;
 
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: reflexoLuxo 6.5s ease-in-out infinite;
+  animation: luxuryShine 7s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -462,23 +487,24 @@
 }
 }
 
-@keyframes reflexoLuxo {
+@keyframes luxuryShine {
   0% {
-    background-position: 140% 0;
+    background-position: 130% 0;
     opacity: 0;
   }
 
   12% {
-    opacity: .85;
+    opacity: 1;
   }
 
   45% {
-    background-position: -140% 0;
-    opacity: .7;
+    background-position: -130% 0;
+    opacity: 1;
   }
 
-  60%, 100% {
-    background-position: -140% 0;
+  60%,
+  100% {
+    background-position: -130% 0;
     opacity: 0;
   }
 }
