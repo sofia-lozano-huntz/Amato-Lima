@@ -35,14 +35,15 @@ export default function Hero() {
       </header>
 
       <div className="heroContent">
-        <div className="heroTitle">
-          <h1 className="heroArt">Arte</h1>
+  <div className="heroTitle">
+    <h1 className="heroArt">Arte</h1>
 
-          <h2 className="heroHabitar">
-            <span>DE</span>
-            <span>HABITAR</span>
-          </h2>
-        </div>
+    <h2 className="heroHabitar">
+      <span data-text="DE">DE</span>
+      <span data-text="HABITAR">HABITAR</span>
+    </h2>
+  </div>
+</div>
 
         <div className="heroSmallLine" />
 
