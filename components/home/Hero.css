@@ -105,29 +105,18 @@
 .heroHabitar span {
   background-image: linear-gradient(
     105deg,
-
-    #f1dfc2 0%,
-
-    #ead3af 18%,
-
-    #fff4e3 34%,
-
-    #ffffff 46%,
-
-    #b8925f 49%,
-
-    #f7ead7 52%,
-
-    #ffffff 56%,
-
-    #d7b184 68%,
-
-    #e8cfaa 82%,
-
-    #f1dfc2 100%
+    #d8b982 0%,
+    #f1d9aa 24%,
+    #fff0cf 39%,
+    #ffffff 47%,
+    #b98948 50%,
+    #ffffff 53%,
+    #ffe8b8 61%,
+    #c99a58 78%,
+    #f0d6a2 100%
   );
 
-  background-size: 220% 100%;
+  background-size: 190% 100%;
   background-position: 100% 0;
 
   -webkit-background-clip: text;
@@ -137,10 +126,10 @@
   color: transparent;
 
   text-shadow:
-    0 0 1px rgba(255,255,255,0.28),
-    0 8px 18px rgba(75,48,25,0.16);
+    0 0 1px rgba(255, 255, 255, 0.45),
+    0 10px 22px rgba(80, 48, 22, 0.22);
 
-  animation: luxuryShine 5s linear infinite;
+  animation: luxuryShine 4.8s linear infinite;
 }
 
 .heroHabitar span:first-child {
