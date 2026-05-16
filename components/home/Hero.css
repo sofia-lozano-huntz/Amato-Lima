@@ -151,14 +151,14 @@
     transparent 100%
   );
 
-  background-size: 220% 100%;
+  background-size: 200% 100%;
   background-position: 110% 0;
 
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: luxuryShine 4.8s linear infinite;
+  animation: luxuryShine 6s linear infinite;
 
   z-index: 2;
   pointer-events: none;
