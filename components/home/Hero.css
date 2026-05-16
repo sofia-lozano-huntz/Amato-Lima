@@ -103,20 +103,19 @@
 }
 
 .heroHabitar span {
-  background-image:
-    linear-gradient(
-      105deg,
-      #ead7bd 0%,
-      #fff3dc 30%,
-      #ffffff 43%,
-      #c9a36f 49%,
-      #ffffff 54%,
-      #f6e7cf 68%,
-      #d7b98e 100%
-    );
+  background-image: linear-gradient(
+    105deg,
+    #f3e5cf 0%,
+    #f3e5cf 42%,
+    #ffffff 48%,
+    #fff8ea 50%,
+    #ffffff 52%,
+    #f3e5cf 58%,
+    #f3e5cf 100%
+  );
 
-  background-size: 220% 100%;
-  background-position: 130% 0;
+  background-size: 320% 100%;
+  background-position: 140% 0;
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -128,7 +127,7 @@
     0 0 1px rgba(255, 255, 255, 0.38),
     0 8px 22px rgba(78, 48, 28, 0.22);
 
-  animation: luxuryShine 16s linear infinite;
+  animation: luxuryShine 12s linear infinite;
 }
 
 .heroHabitar span:first-child {
@@ -444,10 +443,10 @@
 
 @keyframes luxuryShine {
   0% {
-    background-position: 130% 0;
+    background-position: 140% 0;
   }
 
   100% {
-    background-position: -130% 0;
+    background-position: -140% 0;
   }
 }
