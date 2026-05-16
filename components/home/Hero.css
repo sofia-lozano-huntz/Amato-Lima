@@ -108,17 +108,18 @@
 
 .heroHabitar span {
   background: linear-gradient(
-    110deg,
-    rgba(205, 185, 155, 0.72) 0%,
-    rgba(246, 238, 226, 0.95) 34%,
-    rgba(255, 255, 255, 1) 48%,
-    rgba(180, 145, 105, 0.78) 54%,
-    rgba(255, 255, 255, 0.98) 62%,
-    rgba(220, 200, 170, 0.76) 100%
+    105deg,
+    rgba(238, 226, 211, 0.82) 0%,
+    rgba(238, 226, 211, 0.82) 44%,
+    rgba(255, 255, 255, 1) 49%,
+    rgba(214, 190, 160, 0.78) 50%,
+    rgba(255, 255, 255, 1) 51%,
+    rgba(238, 226, 211, 0.82) 56%,
+    rgba(238, 226, 211, 0.82) 100%
   );
 
-  background-size: 320% 100%;
-  background-position: 140% 0;
+  background-size: 260% 100%;
+  background-position: 130% 0;
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -126,7 +127,7 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
 
-  animation: luxuryShine 9s linear infinite;
+  animation: luxuryShine 7s linear infinite;
 }
 
 .heroHabitar span:first-child {
@@ -304,12 +305,12 @@
 }
 
 @keyframes luxuryShine {
-  0% {
-    background-position: 140% 0;
+  from {
+    background-position: 130% 0;
   }
 
-  100% {
-    background-position: -140% 0;
+  to {
+    background-position: -130% 0;
   }
 }
 
