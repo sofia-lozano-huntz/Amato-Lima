@@ -129,7 +129,7 @@
     0 0 1px rgba(255, 255, 255, 0.45),
     0 10px 22px rgba(80, 48, 22, 0.22);
 
-  animation: luxuryShine 4.8s linear infinite;
+  animation: luxuryShine 10s linear infinite;
 }
 
 .heroHabitar span:first-child {
