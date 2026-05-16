@@ -115,7 +115,7 @@
       #d7b98e 100%
     );
 
-  background-size: 260% 100%;
+  background-size: 220% 100%;
   background-position: 130% 0;
 
   -webkit-background-clip: text;
@@ -128,7 +128,7 @@
     0 0 1px rgba(255, 255, 255, 0.38),
     0 8px 22px rgba(78, 48, 28, 0.22);
 
-  animation: luxuryShine 6.5s linear infinite;
+  animation: luxuryShine 16s linear infinite;
 }
 
 .heroHabitar span:first-child {
